@@ -58,7 +58,6 @@ a {
 header {
   min-height: 100vh;
   color: var(--color-white);
-  overflow: hidden;
 }
 @media screen and (max-width: 610px) {
   header {
@@ -111,22 +110,21 @@ section {
     transform: translateY(0) scale(1);
 
 }
-
-.active{
-    display: block;
-    animation: scaleAnim 1s ease-in-out;
-    transform: translateY(0) scaleY(1);
-    @keyframes scaleAnim {
-        0%{
-            transform: translateY(-100%) scaleY(0);
-        }
-        100%{
-            transform: translateY(0%) scaleY(1);
-        }
-    }
-
-}
 */
+.active {
+  display: block;
+  animation: scaleAnim 1s ease-in-out;
+  transform: translateY(0) scaleY(1);
+}
+@keyframes scaleAnim {
+  0% {
+    transform: translateY(-100%) scaleY(0);
+  }
+  100% {
+    transform: translateY(0%) scaleY(1);
+  }
+}
+
 .controls {
   position: fixed;
   z-index: 10;
