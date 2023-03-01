@@ -5,6 +5,10 @@
   list-style: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --color-primary:#191d2b;
   --color-secondary: #27AE60;
@@ -77,31 +81,37 @@ section {
   background-color: var(--color-primary);
 }
 
-.sec1 {
-  display: none;
-  transform: translateY(0) scale(1);
+/*
+.sec1{
+    //display: none;
+    transform: translateY(0) scale(1);
+
 }
 
-.sec2 {
-  display: none;
-  transform: translateY(0) scale(1);
+.sec2{
+    //display: none;
+    transform: translateY(0) scale(1);
+
 }
 
-.sec3 {
-  display: none;
-  transform: translateY(0) scale(1);
+.sec3{
+    //display: none;
+    transform: translateY(0) scale(1);
+
 }
 
-.sec4 {
-  display: none;
-  transform: translateY(0) scale(1);
+.sec4{
+    //display: none;
+    transform: translateY(0) scale(1);
+
 }
 
-.sec5 {
-  display: none;
-  transform: translateY(0) scale(1);
-}
+.sec5{
+    //display: none;
+    transform: translateY(0) scale(1);
 
+}
+*/
 .active {
   display: block;
   animation: scaleAnim 1s ease-in-out;
@@ -642,9 +652,20 @@ section {
 .contact-content-con .right-contact .i-c-2 :last-child {
   margin-left: 1.5rem;
 }
-.contact-content-con .right-contact .submit-btn {
+.contact-content-con .right-contact button {
+  background-color: var(--color-secondary);
+  border-radius: 30px;
+  color: inherit;
+  font-size: 1.1rem;
+  font-weight: 1800;
+  position: relative;
+  border: 1px solid var(--color-secondary);
   display: flex;
-  justify-content: flex-start;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 2rem;
 }
 
 .btn-con {
