@@ -587,7 +587,7 @@ section {
 }
 .contact-content-con .left-contact .contact-info .contact-item p {
   margin-bottom: 0.3rem 0 !important;
-  padding: 0rem !important;
+  padding: 0 1.5rem !important;
 }
 .contact-content-con .left-contact .contact-info .contact-item .icon {
   display: grid;
