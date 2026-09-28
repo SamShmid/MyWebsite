@@ -1,189 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body class="main-content">
-    <header class="section sec1 header active" id="home">
-        <div class="header-content">
-            <div class="left-header">
-                <div class="h-shape"></div>
-                <div class="image">
-                    <img src="img/hero.jpg" alt="">
-                </div>
-            </div>
-            <div class="right-header">
-                <h1 class="name">
-                    Hi, I'm <span>Samuel Shmidman</span>.
-                    An Aspiring Computer Scientist and Aerospace Engineer.
-                </h1>
-                <p>
-                    I'm a sophomore in college majoring in Computer Science and interested in Aerospace Engineering. 
-                    For as long as I can remember, I have been interested in Aerospace Engineering, 3D Printing,
-                    Computer Programming, and general DIY projects. This website is a place to get to know
-                    me and come along for the journey on any of my past and future projects. Enjoy!
-                </p>
-                <div class="btn-con">
-                <a href="files/Samuel Shmidman Resume - September 2024.pdf" class="main-btn">
-                    <span class="btn-text">Download CV</span>
-                    <span class="btn-icon"><i class ="fas fa-download"></i></span>
-                </a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0b0d11" />
+    <meta name="description" content="Samuel Shmidman — software engineer building AI applications, researching WebGPU, and finishing an M.S. in Computer Science at Brandeis University." />
+    <title>Samuel Shmidman — Software Engineer</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./reload.js"></script>
+    <script type="module" src="./opening.js"></script>
+    <script type="module" src="./site.js"></script>
+    <script type="module" src="./profile-assets.js"></script>
+    <script type="module" src="./ducks.js"></script>
+  <meta name="referrer" content="no-referrer">
+    <script type="module" src="./tooltips.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <canvas id="character-field" aria-hidden="true"></canvas>
+    <div class="page">
+      <header id="top" class="site-header">
+        <a class="wordmark" href="#top" aria-label="Samuel Shmidman, home"><span aria-hidden="true">~/</span> sam</a>
+        <nav aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="./projects/">Projects</a>
+        </nav>
+      </header>
+
+      <main id="main" tabindex="-1">
+        <section id="about" class="intro" aria-labelledby="intro-title">
+          <div class="intro-heading">
+            <p class="eyebrow">Software engineer · New York City area</p>
+            <h1 id="intro-title">Hey! I'm <span>Sam Shmidman.</span></h1>
+            <p class="intro-lead">I absolutely love building things, whether it is software, hardware, or both.</p>
+          </div>
+          <div class="intro-copy">
+            <p>I build and deploy AI applications, research browser fingerprinting with WebGPU, and run my own homelab. I finished my B.S. in Computer Science at Brandeis in three years and I'm now finishing my M.S., graduating in May 2027.</p>
+          </div>
+          <div class="intro-details">
+            <p class="availability">Looking for full-time opportunities starting June 2027.</p>
+            <div class="profile-links" aria-label="Profiles and résumé">
+              <a href="https://github.com/SamShmid" target="_blank" rel="noopener noreferrer" data-tooltip="Code and repositories"><svg class="social-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+</svg> GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/samuel-shmidman/" target="_blank" rel="noopener noreferrer" data-tooltip="Full work and education history"><svg class="social-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg> LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+              <a class="resume-link" role="link" tabindex="0" aria-disabled="true" data-tooltip="An updated résumé will be available soon"><svg class="social-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+  <path d="M8.5 6.5a.5.5 0 0 0-1 0v3.793L6.354 9.146a.5.5 0 1 0-.708.708l2 2a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
+  <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+</svg> Résumé <span class="coming-soon">Coming soon</span></a>
             </div>
           </div>
-        </div>
-    </header>
-    <main>
-        <section class="section sec3 " id="portfolio">
-            <div class="main-title">
-                <h2>My <span>Portfolio</span><span class="bg-text">My Work</span></h2>
-            </div>
-        <div class="portfolios">
-            <div class="portfolio-item">
-                <div class="image">
-                    
-                    <img src="img/port1.jpg" alt="">
-                </div>
-                <div class="hover-items">
-                    <h3>Sam Macropad</h3>
-                    <div class="icons">
-                        <a href="https://samshmid.github.io/Sam-Macropad/" class="icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="image">
-                    
-                    <img src="img/port2.jpg" alt="">
-                </div>
-                <div class="hover-items">
-                    <h3>Sam Smart Mirror</h3>
-                    <div class="icons">
-                        <a href="https://samshmid.github.io/Sam-Smart-Mirror/" class="icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+          <figure class="headshot">
+            <button class="portrait-zoom" type="button" aria-label="Enlarge portrait" data-tooltip="Activate to enlarge the photo">
+              <img src="./assets/samuel-shmidman.png" alt="Samuel Shmidman" width="304" height="304" fetchpriority="high" />
+            </button>
+          </figure>
         </section>
-        <section class="section sec5 " id="contact">
-            <div class="contacts-container">
-                <div class="main-title">
-                    <h2>Contact <span>Me </span><span class="bg-text">Contact Me</span></h2>
-                </div>
-                <div class="contact-content-con">
-                    <div class="left-contact">
-                        <h4>Contact me here</h4>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Location
-                                </div>
-                                <p>
-                                    Waltham, MA
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-envelope"></i>
-                                    Email 
-                                </div>
-                                <p>
-                                    samuelshmidman@gmail.com
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-user-graduate"></i>
-                                    Education
-                                </div>
-                                <p>
-                                    Brandeis University, MA
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-user-graduate"></i>
-                                    Mobile Number
-                                </div>
-                                <p>
-                                    917-756-6955
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-globe-africa"></i>
-                                    Languages
-                                </div>
-                                <p>
-                                    English
-                                </p>
-                            </div>
-                        </div>
-                        <div class="contact-icons">
-                            <div class="contact-icon">
-                                <a href="https://github.com/SamShmid" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/samuel-shmidman" target="_blank">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-contact">
-                        <form action="https://formspree.io/f/moqzwejy" method="POST" class="contact-form">
-                            <div class="input-control i-c-2"> 
-                                <input type="text" required placeholder="YOUR NAME" name="Name">
-                                <input type="text" required placeholder="YOUR EMAIL"name="Email">
-                            </div>
-                            <div class="input-control">
-                                <input type="text" required placeholder="ENTER SUBJECT" name="Subject">
-                            </div>
-                            <div class="input-control">
-                                <textarea name="message" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
-                            </div>
-                            
-                            <div class="buttons">
-                                <div class="submit-btn">
-                                        <button type="submit">Submit</button>
-                                </div>
 
-                            </div>
-                        </form>
-                    </div>
+        <section id="experience" class="experience section" aria-labelledby="experience-title">
+          <div class="section-heading"><h2 id="experience-title">Along the way</h2><span class="section-marker" aria-hidden="true">01 /</span></div>
+          <div class="timeline-tabs" role="tablist" aria-label="Experience" hidden>
+            <button id="work-tab" type="button" role="tab" aria-selected="true" aria-controls="work-panel" tabindex="0">Work</button>
+            <button id="education-tab" type="button" role="tab" aria-selected="false" aria-controls="education-panel" tabindex="-1">Education</button>
+          </div>
+          <div id="work-panel" class="timeline-panel" role="tabpanel" aria-labelledby="work-tab" tabindex="0">
+            <h3 class="fallback-heading">Work</h3>
+            <ol class="timeline">
+<li class="timeline-entry"><span class="timeline-badge badge-yc" aria-hidden="true">Y</span><div class="entry-heading"><h3>Stealth Startup · YC backed</h3><span class="date">Aug 2026 — Present</span></div><p class="role">Software Engineering (AI) Intern</p><p class="entry-meta">Part-time · Remote</p><p class="entry-description">Building software for an AI healthcare startup.</p></li>
+<li class="timeline-entry"><span class="timeline-badge badge-independent" aria-hidden="true">S</span><div class="entry-heading"><h3>Self Employed</h3><span class="date">Jun 2026 — Present</span></div><p class="role">AI Software Engineer and Consultant</p><p class="entry-meta">Part-time · Remote</p><p class="entry-description">Built and deployed a RAG email assistant for a non-technical industrial supplier, working directly with the client from requirements through production. Features include cited answers and OAuth mailbox sync.</p></li>
+              <li class="timeline-entry">
+                <span class="timeline-badge badge-brandeis" aria-hidden="true">B</span>
+                <div class="entry-heading"><h3>Brandeis University</h3><span class="date">Oct 2023 — Present</span></div>
+                <div class="role-group">
+                  <div class="role-heading"><p class="role">Researcher, Securitas Ex Machina Lab</p><span class="date">May 2026 — Present</span></div>
+                  <p class="entry-description">Researching browser device fingerprinting through WebGPU with Professor Kostas Solomos. Built a public data collection site on Cloudflare Workers and D1 and automated desktop and mobile experiments.</p>
                 </div>
-            </div>
+                <div class="role-group">
+                  <div class="role-heading"><p class="role">Teaching Assistant, COSI 142A Embedded Systems Development</p><span class="date">Jan 2026 — Present</span></div>
+                  <p class="entry-description">TA for Professor Ju Hyoung Mun, holding office hours and helping students with embedded hardware and systems code.</p>
+                </div>
+                <div class="role-group">
+                  <div class="role-heading"><p class="role">Engineering Classroom Student Worker and Technician</p><span class="date">Oct 2023 — Present</span></div>
+                  <p class="entry-description">Run a 20+ printer 3D print farm and help students, faculty, and staff with digital fabrication, robotics, Arduino, and soldering. Built a print-job tracking system used for more than two years.</p>
+                </div>
+                <div class="role-group">
+                  <div class="role-heading"><p class="role">Teaching Assistant, COSI 131A Fundamentals of Computer Systems</p><span class="date">Aug — Dec 2025</span></div>
+                  <p class="entry-description">TA for Professor Liuba Shrira.</p>
+                </div>
+                <div class="role-group">
+                  <div class="role-heading"><p class="role">Summer Intern Technician</p><span class="date">Jul — Aug 2024</span></div>
+                  <p class="entry-description">Repaired 40+ 3D printers to prepare workspaces for the upcoming semester.</p>
+                </div>
+              </li>
+<li class="timeline-entry"><span class="timeline-badge badge-williams" aria-hidden="true">W</span><div class="entry-heading"><h3>Williams Racing</h3><span class="date">Jun — Aug 2025</span></div><p class="role">Summer Placement - Off-Car Engineering</p><p class="entry-meta">Internship · Grove, England · On-site</p><p class="entry-description">Worked onsite for nine weeks at Williams Racing HQ in the design department, reporting to the Head of Off-Car Engineering. Designed parts for FIA testing, garage and pit equipment, and STEM activities.</p></li>
+<li class="timeline-entry"><span class="timeline-badge badge-bonnot" aria-hidden="true">B</span><div class="entry-heading"><h3>The Bonnot Company</h3><span class="date">May — Jun 2024</span></div><p class="role">Engineering Intern</p><p class="entry-meta">Internship · Akron, Ohio · On-site</p><p class="entry-description">Supported the engineering team on the factory floor, assembling and testing industrial extruders.</p></li>
+              <li class="timeline-entry">
+                <span class="timeline-badge badge-toys" aria-hidden="true">R</span>
+                <div class="entry-heading"><h3>Toys “R” Us</h3><span class="date">Summer 2023</span></div>
+                <p class="role">Summer Employee</p>
+                <p class="entry-meta">American Dream flagship store</p>
+                <p class="entry-description">Worked across cashier duties, stock management, and warehouse operations in a busy retail environment.</p>
+              </li>
+            </ol>
+          </div>
+          <div id="education-panel" class="timeline-panel" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
+            <h3 class="fallback-heading">Education</h3>
+            <ol class="timeline">
+              <li class="timeline-entry">
+                <span class="timeline-badge" aria-hidden="true">B</span>
+                <div class="entry-heading"><h3>Brandeis University</h3><span class="date">May 2026 — May 2027</span></div>
+                <p class="role">M.S. in Computer Science</p>
+                <p class="entry-description">In progress. Expected graduation in May 2027.</p>
+              </li>
+              <li class="timeline-entry">
+                <span class="timeline-badge" aria-hidden="true">B</span>
+                <div class="entry-heading"><h3>Brandeis University</h3><span class="date">Aug 2023 — Aug 2026</span></div>
+                <p class="role">B.S. in Computer Science</p>
+                <p class="entry-description">Completed in three years.</p>
+              </li>
+            </ol>
+          </div>
         </section>
-    </main>
 
-    <div class="controls">
-        <a href="#home" class="control control-1 active-btn" data-id="home">
-            <i class="fas fa-home"></i>
-        </a>
-        <a href="#portfolio"class="control control-3 " data-id="portfolio">
-            <i class="fas fa-briefcase"></i>
-
-        </a>
-        <a href="#contact" class="control control-5 " data-id="contact">
-            <i class="fas fa-envelope-open"></i>
-
-        </a>
+        <section id="projects" class="projects section" aria-labelledby="projects-title">
+          <div class="section-heading"><h2 id="projects-title">Selected projects</h2><a class="section-link" href="./projects/">All projects <span aria-hidden="true">→</span></a></div>
+          <div class="project-grid">
+            <article class="project-card">
+              <p class="project-category">AI / Retrieval</p>
+              <h3>Emmaily</h3>
+              <p>An AI email assistant that answers questions with citations from your inbox. Mailbox sync, encrypted storage, and organization-level controls.</p>
+              <ul class="tags" aria-label="Technologies"><li>Python</li><li>FastAPI</li><li>React</li><li>pgvector</li></ul>
+              <a class="project-link" href="https://emmaily.com" target="_blank" rel="noopener noreferrer">Visit Emmaily <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="project-card">
+              <p class="project-category">Education / Full stack</p>
+              <h3>Skoli</h3>
+              <p>A self-hosted classroom platform for courses, assignments, quizzes, and grading, with student–instructor conversations and a submission CLI.</p>
+              <ul class="tags" aria-label="Technologies"><li>Python</li><li>Django</li><li>PostgreSQL</li><li>Docker</li></ul>
+              <a class="project-link" href="https://skoli.shmiditech.com" target="_blank" rel="noopener noreferrer">Visit Skoli <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="project-card">
+              <p class="project-category">Research / Browser systems</p>
+              <h3>WebGPU Fingerprinting</h3>
+              <p>Research into GPU-based browser fingerprinting, combining rendering and precision experiments with automated desktop and mobile data collection.</p>
+              <ul class="tags" aria-label="Technologies"><li>WebGPU</li><li>WGSL</li><li>Python</li><li>Cloudflare</li></ul>
+              <a class="project-link" href="https://echetleus.com" target="_blank" rel="noopener noreferrer">Visit Echetleus <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="project-card">
+              <p class="project-category">Computer vision / Fabrication</p>
+              <h3>Gridfinity Tracer</h3>
+              <p>Turn photos of tools into editable, fitted storage bins. Preview them in 3D and export models for printing or further CAD work.</p>
+              <ul class="tags" aria-label="Technologies"><li>OpenCV</li><li>Three.js</li><li>FastAPI</li><li>build123d</li></ul>
+              <p class="project-note">Runs locally · STL, 3MF &amp; STEP export</p>
+            </article>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <p>© 2026 Samuel Shmidman</p>
+        <div class="footer-actions"><a href="./privacy/">Privacy &amp; accessibility</a>
+          <button class="motion-toggle" type="button" data-tooltip="Pause animations on this page" hidden>Pause motion</button>
+          <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+        </div>
+      </footer>
     </div>
-    <div class="theme-btn">
-        <i class="fas fa-adjust"></i>
-    </div>
-    <script src="app.js"></script>
-</body>
+  </body>
 </html>
