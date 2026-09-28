@@ -1,0 +1,24 @@
+# Only upload the public site. Keep Git metadata, docs, and configuration out.
+/*
+!/index.html
+!/*.css
+!/*.js
+!/favicon.svg
+
+!/assets/
+/assets/*
+!/assets/*.png
+!/assets/*.jpg
+!/assets/*.jpeg
+!/assets/*.webp
+!/assets/*.svg
+!/assets/resume.pdf
+!/assets/bootstrap-icons-LICENSE.txt
+
+!/projects/
+/projects/*
+!/projects/index.html
+
+!/privacy/
+/privacy/*
+!/privacy/index.html

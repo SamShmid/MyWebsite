@@ -2,7 +2,9 @@
 
 A lightweight personal portfolio built with HTML, CSS, and JavaScript. No framework, dependencies, or build step.
 
-Live site: https://samshmid.github.io/MyWebsite/
+Source: https://github.com/SamShmid/MyWebsite
+
+GitHub Pages is disabled. Cloudflare hosting is prepared but has not been deployed.
 
 ## Update the photo and résumé
 
@@ -30,11 +32,34 @@ From this directory:
 python3 -m http.server 4321 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:4321/. Page-relative links work both locally and under `/MyWebsite/` on GitHub Pages.
+Open http://127.0.0.1:4321/. Page-relative links work locally and on a hosted domain.
 
-## Publish
+## Optional Cloudflare hosting
 
-Commit and push changes to `main`. GitHub Pages is configured to publish from the repository root. `.nojekyll` keeps this a plain static site. No deployment secrets or additional workflow are needed.
+`wrangler.json` configures an asset-only Cloudflare Worker. No server code or build step is needed. Static asset requests and storage are free under [Cloudflare's published pricing](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/).
+
+When ready to publish, update the hosting disclosure in `privacy/index.html` to match the Cloudflare setup, then sign into your Cloudflare account and deploy from this directory:
+
+```sh
+npx wrangler@4 login
+npx wrangler@4 deploy
+```
+
+The deploy command publishes the site to a `workers.dev` address. Merely committing this configuration does not deploy anything. GitHub Pages should remain disabled.
+
+For optional automatic deployments, connect only `SamShmid/MyWebsite` through [Cloudflare's GitHub integration](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/github-integration/), with these settings:
+
+| Setting | Value |
+| --- | --- |
+| Worker name | `samuel-shmidman-portfolio` |
+| Production branch | `main` |
+| Root directory | Repository root |
+| Build command | Leave empty |
+| Deploy command | `npx wrangler@4 deploy` |
+
+Once connected, pushes to `main` publish the changes. This integration has not been enabled yet.
+
+`.assetsignore` allows only the public pages, browser scripts, styles, icons, approved image formats, and optional `assets/resume.pdf` to be uploaded. Add new page paths there when creating more pages. Git metadata, configuration, and README files stay out of the hosted assets.
 
 Only website files belong in this repository. Keep drafts, private research, credentials, and unapproved documents elsewhere.
 
@@ -42,4 +67,4 @@ Only website files belong in this repository. Keep drafts, private research, cre
 
 Includes keyboard navigation, focus indicators, reduced-motion support, a footer motion control, image alternatives, touch behavior, and responsive layouts. Tooltips support keyboard focus and Escape. Full browser, device, and assistive-technology testing is still needed; this is not a WCAG conformance certification.
 
-The site code has no analytics, tracking cookies, browser storage, contact form, or chat. It checks for the optional résumé with a same-origin request. GitHub Pages processes hosting request data as described on the privacy page.
+The site code has no analytics, tracking cookies, browser storage, contact form, or chat. It checks for the optional résumé with a same-origin request. Public hosting is currently disabled; review the provider's request-data handling when publishing.
