@@ -41,11 +41,13 @@ Open http://127.0.0.1:4321/. Page-relative links work locally and on a hosted do
 The privacy page includes a Cloudflare hosting disclosure. When ready to publish, sign into your Cloudflare account and deploy from this directory:
 
 ```sh
-npx wrangler@4 login
-npx wrangler@4 deploy
+npx wrangler login
+npx wrangler deploy
 ```
 
 The deploy command publishes the site to a `workers.dev` address. Merely committing this configuration does not deploy anything. GitHub Pages should remain disabled.
+
+These commands leave the Wrangler major version unrestricted. To explicitly request the release tagged `latest`, use `npx wrangler@latest deploy`; plain `npx wrangler deploy` can reuse a locally installed version if one is added later. See [npm's npx documentation](https://docs.npmjs.com/cli/v11/commands/npx/).
 
 For optional automatic deployments, connect only `SamShmid/MyWebsite` through [Cloudflare's GitHub integration](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/github-integration/), with these settings:
 
@@ -55,7 +57,7 @@ For optional automatic deployments, connect only `SamShmid/MyWebsite` through [C
 | Production branch | `main` |
 | Root directory | Repository root |
 | Build command | Leave empty |
-| Deploy command | `npx wrangler@4 deploy` |
+| Deploy command | `npx wrangler deploy` |
 
 Once connected, pushes to `main` publish the changes. This integration has not been enabled yet.
 
