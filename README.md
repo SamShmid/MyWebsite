@@ -38,7 +38,7 @@ Open http://127.0.0.1:4321/. Page-relative links work locally and on a hosted do
 
 `wrangler.json` configures an asset-only Cloudflare Worker. No server code or build step is needed. Static asset requests and storage are free under [Cloudflare's published pricing](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/).
 
-When ready to publish, update the hosting disclosure in `privacy/index.html` to match the Cloudflare setup, then sign into your Cloudflare account and deploy from this directory:
+The privacy page includes a Cloudflare hosting disclosure. When ready to publish, sign into your Cloudflare account and deploy from this directory:
 
 ```sh
 npx wrangler@4 login
