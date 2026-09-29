@@ -11,17 +11,18 @@ GitHub Pages is disabled. Cloudflare hosting is prepared but has not been deploy
 Open [`assets/`](assets/):
 
 - Replace `samuel-shmidman.png` to change the photo.
-- Add `resume.pdf` to enable the résumé download. The link remains “Coming soon” when the file is absent.
+- Replace `assets/resume.pdf` with a newer approved PDF to update the résumé download. The supplied September 2026 revision is included and linked directly from the home page, including without JavaScript.
 - See [`assets/README.md`](assets/README.md) for details.
 
 ## Edit the site
 
 - `index.html` — introduction, work/education, featured projects.
-- `projects/index.html` — complete project catalog.
+- `projects/index.html` — 16-project catalog. Most cards are informational listings; outgoing links include the EZ-TES iOS download, CDCW Devpost entry, and verified public GitHub repositories. The EZ-TES GitHub link is explicitly labeled as its website repository. Homelab documentation is marked coming soon.
 - `privacy/index.html` — privacy information and accessibility controls.
 - `styles.css` — shared appearance and responsive layout.
+- `favicon.svg` — the selected Machined single-S mark on warm orange, shared across all pages.
 - `opening.js` — looping character background, with lighter rendering on phones.
-- `ducks.js` — one mother and four ducklings, appearing after **60 seconds of visible-page time** and scrolling down. Perches span timeline entries, roles, project cards, and the footer.
+- `ducks.js` — one mother and four ducklings, appearing after **5 minutes of visible-page time** and scrolling down. Perches span timeline entries, roles, project cards, and the footer.
 - `site.js`, `tooltips.js`, `profile-assets.js`, `reload.js` — keyboard/touch interactions, optional résumé loading, and refresh behavior.
 
 ## Preview locally
@@ -69,4 +70,4 @@ Only website files belong in this repository. Keep drafts, private research, cre
 
 Includes keyboard navigation, focus indicators, reduced-motion support, a footer motion control, image alternatives, touch behavior, and responsive layouts. Tooltips support keyboard focus and Escape. Full browser, device, and assistive-technology testing is still needed; this is not a WCAG conformance certification.
 
-The site code has no analytics, tracking cookies, browser storage, contact form, or chat. It checks for the optional résumé with a same-origin request. Public hosting is currently disabled; review the provider's request-data handling when publishing.
+The site code has no analytics, tracking cookies, browser storage, contact form, or chat. The résumé is a direct same-origin PDF download. Public hosting is currently disabled; review the provider's request-data handling when publishing.

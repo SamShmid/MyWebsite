@@ -1,7 +1,7 @@
 // A small, decorative family peeks over component edges as the reader scrolls.
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const toggles = document.querySelectorAll('.motion-toggle');
-const ARRIVAL_DELAY = 60_000;
+const ARRIVAL_DELAY = 5 * 60_000;
 const FAMILY_WIDTH = 216;
 const MOTHER_HEIGHT = 40;
 const FOLLOW_DELAY = 170;

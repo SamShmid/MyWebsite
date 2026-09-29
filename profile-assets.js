@@ -1,7 +1,8 @@
 // Drop the approved PDF into assets/resume.pdf to enable its download link.
 // This checks one file on this site; it sends no analytics or visitor state.
+// An existing direct download link needs no availability request.
 const resume = document.querySelector('.resume-link');
-if (resume) {
+if (resume && !resume.hasAttribute('href')) {
   const url = new URL('./assets/resume.pdf', import.meta.url);
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 6000);
