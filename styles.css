@@ -95,8 +95,6 @@ h2 { font-size: 1.4375rem; letter-spacing: -.035em; line-height: 1.4; font-weigh
 .site-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 16px; padding: 20px 0 max(35px, env(safe-area-inset-bottom)); font-size: 0.8125rem; color: var(--muted); }
 .site-footer a { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; font-size: 0.875rem; }
 .footer-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; }
-.motion-toggle { min-height: 44px; padding: 0; color: var(--muted); background: transparent; border: 0; font-size: 0.875rem; }
-.motion-toggle:hover { color: var(--accent); }
 .duck-hideout { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
 .wandering-duck { transform-origin: top left; position: absolute; left: 0; top: 0; user-select: none; pointer-events: none; }
 .wandering-duck pre { margin: 0; font-family: var(--mono); font-weight: 500; white-space: pre; }

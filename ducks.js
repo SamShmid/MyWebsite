@@ -1,6 +1,5 @@
 // A small, decorative family peeks over component edges as the reader scrolls.
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-const toggles = document.querySelectorAll('.motion-toggle');
 const ARRIVAL_DELAY = 5 * 60_000;
 const FAMILY_WIDTH = 216;
 const MOTHER_HEIGHT = 40;
@@ -30,7 +29,6 @@ const ducks = Array.from({ length: 5 }, (_, index) => {
 });
 let timer = 0;
 let frame = 0;
-let paused = false;
 let moving = false;
 let currentPerch = null;
 // Page-local timing only: no cookies, browser storage, or network reporting.
@@ -103,11 +101,11 @@ function stop() {
 }
 function schedule(delay = 9500 + Math.random() * 3500) {
   window.clearTimeout(timer);
-  if (ready() && explored() && !paused && !reducedMotion.matches && !document.hidden) timer = window.setTimeout(hop, delay);
+  if (ready() && explored() && !reducedMotion.matches && !document.hidden) timer = window.setTimeout(hop, delay);
 }
 function hop() {
   timer = 0;
-  if (!ready() || paused || reducedMotion.matches || document.hidden) return;
+  if (!ready() || reducedMotion.matches || document.hidden) return;
   const visible = visiblePerches();
   const otherComponents = visible.filter(spot => spot.component !== currentPerch?.component);
   const otherPositions = visible.filter(spot => spot.id !== currentPerch?.id);
@@ -151,28 +149,11 @@ function settle() {
   else { family.hidden = true; currentPerch = null; }
 }
 
-function updateToggles() {
-  toggles.forEach(toggle => {
-    toggle.hidden = reducedMotion.matches;
-    toggle.textContent = paused ? 'Resume motion' : 'Pause motion';
-    toggle.dataset.tooltip = paused ? 'Resume animations on this page' : 'Pause animations on this page';
-  });
-}
-updateToggles();
-toggles.forEach(toggle => {
-  toggle.addEventListener('click', () => {
-    paused = !paused;
-    updateToggles();
-    document.dispatchEvent(new CustomEvent('portfolio-motionchange', { detail: { paused } }));
-    if (paused) stop();
-    else schedule(500);
-  });
-});
 window.addEventListener('scroll', () => {
   if (!explored()) { stop(); family.hidden = true; currentPerch = null; return; }
   if (!ready()) return;
   if (reducedMotion.matches) { settle(); return; }
-  if (paused || moving) return;
+  if (moving) return;
   if (!onScreen(currentPerch)) schedule(900);
 }, { passive: true });
 function componentChanged() {
@@ -200,7 +181,7 @@ function awaitArrival() {
   if (remaining > 0) {
     arrivalTimer = window.setTimeout(awaitArrival, Math.ceil(remaining));
   } else if (reducedMotion.matches) settle();
-  else if (!paused && explored()) {
+  else if (explored()) {
     if (family.hidden) hop();
     else schedule(1200);
   }
@@ -225,7 +206,6 @@ window.addEventListener('pagehide', suspend);
 window.addEventListener('pageshow', resume);
 reducedMotion.addEventListener('change', () => {
   stop();
-  updateToggles();
   if (reducedMotion.matches) settle();
   else schedule(1200);
 });

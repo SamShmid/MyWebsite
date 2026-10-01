@@ -4,7 +4,7 @@ A lightweight personal portfolio built with HTML, CSS, and JavaScript. No framew
 
 Source: https://github.com/SamShmid/MyWebsite
 
-GitHub Pages is disabled. Cloudflare hosting is prepared but has not been deployed.
+The live portfolio is hosted by Cloudflare at https://portfolio.shmiditech.com/. The existing Workers Builds integration deploys updates from `main` in `SamShmid/MyWebsite`.
 
 ## Update the photo and résumé
 
@@ -21,7 +21,7 @@ Open [`assets/`](assets/):
 - `privacy/index.html` — privacy information and accessibility controls.
 - `styles.css` — shared appearance and responsive layout.
 - `favicon.svg` — the selected Machined single-S mark on warm orange, shared across all pages.
-- `opening.js` — looping character background, with lighter rendering on phones.
+- `opening.js` plays the character background once on each home page load or refresh, with lighter rendering on phones.
 - `ducks.js` — one mother and four ducklings, appearing after **5 minutes of visible-page time** and scrolling down. Perches span timeline entries, roles, project cards, and the footer.
 - `site.js`, `tooltips.js`, `profile-assets.js`, `reload.js` — keyboard/touch interactions, optional résumé loading, and refresh behavior.
 
@@ -35,22 +35,24 @@ python3 -m http.server 4321 --bind 127.0.0.1
 
 Open http://127.0.0.1:4321/. Page-relative links work locally and on a hosted domain.
 
-## Optional Cloudflare hosting
+## Cloudflare deployment
 
 `wrangler.json` configures an asset-only Cloudflare Worker. No server code or build step is needed. Static asset requests and storage are free under [Cloudflare's published pricing](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/).
 
-The privacy page includes a Cloudflare hosting disclosure. When ready to publish, sign into your Cloudflare account and deploy from this directory:
+The privacy page includes a Cloudflare hosting disclosure. Normal production updates are deployed by the existing GitHub integration after a push to `main`. Check the commit's `Workers Builds` result to confirm deployment.
+
+For a manual deployment, sign into the Cloudflare account that owns `samuel-shmidman-portfolio`, select that account when multiple accounts are available, and deploy from this directory.
 
 ```sh
 npx wrangler login
 npx wrangler deploy
 ```
 
-The deploy command publishes the site to a `workers.dev` address. Merely committing this configuration does not deploy anything. GitHub Pages should remain disabled.
+The deployment updates the existing Worker and its connected portfolio domain. A local commit does not publish anything until it is pushed or manually deployed. GitHub Pages should remain disabled.
 
 These commands leave the Wrangler major version unrestricted. To explicitly request the release tagged `latest`, use `npx wrangler@latest deploy`; plain `npx wrangler deploy` can reuse a locally installed version if one is added later. See [npm's npx documentation](https://docs.npmjs.com/cli/v11/commands/npx/).
 
-For optional automatic deployments, connect only `SamShmid/MyWebsite` through [Cloudflare's GitHub integration](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/github-integration/), with these settings:
+The existing [Cloudflare GitHub integration](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/github-integration/) connects `SamShmid/MyWebsite`. The repository is prepared for these settings.
 
 | Setting | Value |
 | --- | --- |
@@ -60,7 +62,7 @@ For optional automatic deployments, connect only `SamShmid/MyWebsite` through [C
 | Build command | Leave empty |
 | Deploy command | `npx wrangler deploy` |
 
-Once connected, pushes to `main` publish the changes. This integration has not been enabled yet.
+The integration was verified through the successful `Workers Builds` check on the September 29 résumé update.
 
 `.assetsignore` allows only the public pages, browser scripts, styles, icons, approved image formats, and optional `assets/resume.pdf` to be uploaded. Add new page paths there when creating more pages. Git metadata, configuration, and README files stay out of the hosted assets.
 
@@ -68,6 +70,6 @@ Only website files belong in this repository. Keep drafts, private research, cre
 
 ## Accessibility and privacy
 
-Includes keyboard navigation, focus indicators, reduced-motion support, a footer motion control, image alternatives, touch behavior, and responsive layouts. Tooltips support keyboard focus and Escape. Full browser, device, and assistive-technology testing is still needed; this is not a WCAG conformance certification.
+Includes keyboard navigation, focus indicators, reduced-motion support, image alternatives, touch behavior, and responsive layouts. The character background plays one 5.5-second pass per home page load. The decorative ducks remain, and there is no footer motion control. Tooltips support keyboard focus and Escape. Full browser, device, and assistive-technology testing is still needed. This is not a WCAG conformance certification.
 
-The site code has no analytics, tracking cookies, browser storage, contact form, or chat. The résumé is a direct same-origin PDF download. Public hosting is currently disabled; review the provider's request-data handling when publishing.
+The site code has no analytics, tracking cookies, browser storage, contact form, or chat. The résumé is a direct same-origin PDF download. Cloudflare provides the public hosting. The privacy page describes the provider's request-data handling.

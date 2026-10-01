@@ -63,7 +63,6 @@ document.querySelectorAll('[data-tooltip]').forEach((trigger, index) => {
   trigger.addEventListener('transitionend', refresh);
   window.addEventListener('resize', refresh);
   window.addEventListener('scroll', refresh, { passive: true });
-  document.addEventListener('portfolio-motionchange', refresh);
   document.addEventListener('portfolio-assetschange', refresh);
   document.addEventListener('keydown', event => {
     if (event.key !== 'Escape') return;

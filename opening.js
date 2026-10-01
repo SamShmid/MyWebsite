@@ -1,5 +1,5 @@
 // A full-screen sheet of characters, pulled from the upper-left corner.
-// The original 5.5-second pass repeats, with an invisible seam between cycles.
+// Play one 5.5-second pass per page load, then leave the background clear.
 const canvas = document.querySelector('#character-field');
 const context = canvas.getContext('2d', { alpha: false });
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -24,7 +24,6 @@ let frame = 0;
 let lastTime = null;
 let lastPaint = -Infinity;
 let elapsed = 0;
-let paused = false;
 const clamp = value => Math.max(0, Math.min(1, value));
 const smooth = value => { const t = clamp(value); return t * t * (3 - 2 * t); };
 
@@ -137,11 +136,16 @@ function stop() {
 }
 function tick(now) {
   frame = 0;
-  if (paused || document.hidden || reducedMotion.matches) return;
-  if (lastTime !== null) elapsed += now - lastTime;
+  if (elapsed >= SETTINGS.duration || document.hidden || reducedMotion.matches) return;
+  if (lastTime !== null) elapsed = Math.min(SETTINGS.duration, elapsed + now - lastTime);
   lastTime = now;
+  if (elapsed >= SETTINGS.duration) {
+    clear();
+    stop();
+    return;
+  }
   if (elapsed - lastPaint >= frameInterval) {
-    render(elapsed % SETTINGS.duration);
+    render(elapsed);
     lastPaint = Number.isFinite(lastPaint)
       ? elapsed - (elapsed - lastPaint) % frameInterval
       : elapsed;
@@ -149,18 +153,13 @@ function tick(now) {
   frame = requestAnimationFrame(tick);
 }
 function start() {
-  if (!frame && !paused && !document.hidden && !reducedMotion.matches) frame = requestAnimationFrame(tick);
+  if (!frame && elapsed < SETTINGS.duration && !document.hidden && !reducedMotion.matches) frame = requestAnimationFrame(tick);
 }
 window.addEventListener('resize', resize);
 window.addEventListener('pagehide', stop);
 window.addEventListener('pageshow', start);
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) stop();
-  else start();
-});
-document.addEventListener('portfolio-motionchange', event => {
-  paused = event.detail.paused;
-  if (paused) stop();
   else start();
 });
 reducedMotion.addEventListener('change', () => {
