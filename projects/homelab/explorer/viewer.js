@@ -1,4 +1,4 @@
-import { annotationEntries, instancesFor, toggleSelection, labelText } from './viewer-state.mjs?v=image-8';
+import { annotationEntries, instancesFor, toggleSelection, labelText } from './viewer-state.mjs?v=live-9';
 import { initializeWebGPU } from './gpu-startup.mjs';
 const $ = id => document.getElementById(id);
 const host = $('canvas-host'), stage = $('stage'), area = $('model-area');
@@ -35,9 +35,9 @@ function imageView() {
   const showImage = !gpuReady || staticRequested;
   if (showImage && Number($('explode').value)) { $('explode').value = '0'; applyExplosion(); }
   const image = $('fallback-image');
-  image.src = `assets/images/screenshots/${mode}/perspective.jpg?v=image-8`;
+  image.src = `assets/images/screenshots/${mode}/perspective.jpg?v=live-9`;
   image.alt = `${mode === 'hardware' ? 'Translucent fastener' : 'Three-quarter'} screenshot of the homelab rack.`;
-  image.onerror = () => { image.onerror = null; image.src = 'assets/images/screenshots/overview/perspective.jpg?v=image-8'; image.alt = 'Three-quarter screenshot of the homelab rack.'; };
+  image.onerror = () => { image.onerror = null; image.src = 'assets/images/screenshots/overview/perspective.jpg?v=live-9'; image.alt = 'Three-quarter screenshot of the homelab rack.'; };
   $('image-view').hidden = !showImage; host.hidden = showImage;
   document.querySelector('.viewer-controls').hidden = showImage;
   $('resume-3d').hidden = !(gpuReady && staticRequested);
@@ -233,15 +233,6 @@ async function startGPU() {
   renderer=startup.renderer;
   document.body.dataset.gpuCheck=renderer?'ready':startup.reason;
   if (!renderer) { status('Image view');imageView();return; }
-  if (document.body.hasAttribute('data-local-models')) {
-    // A missing deployment asset is not a browser capability failure.
-    const localAssets = await fetch('./local-models.json').catch(()=>null);
-    if (!localAssets?.ok) {
-      document.body.dataset.fallbackReason='models-unavailable';
-      renderer.dispose();renderer=null;
-      status('Image view');imageView();return;
-    }
-  }
   const [{OrbitControls},{STLLoader}]=await Promise.all([import('./vendor/OrbitControls.js'),import('./vendor/STLLoader.js')]);
   renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setClearColor(0x000000,0);renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.35;
   host.append(renderer.domElement);scene=new THREE.Scene();
@@ -252,7 +243,8 @@ async function startGPU() {
   const rack=new THREE.Group();scene.add(rack);
   const loader=new STLLoader(),geometries=new Map();
   const files=[...new Set([...parts.values()].flatMap(p=>p.meshes?p.meshes.map(m=>m.file):[p.file]))];
-  await Promise.all(files.map(async file=>{const geometry=await loader.loadAsync(file);geometry.computeBoundingBox();geometry.computeBoundingSphere();geometries.set(file,geometry);}));
+  let loaded=0;
+  await Promise.all(files.map(async file=>{const geometry=await loader.loadAsync(file);geometry.computeBoundingBox();geometry.computeBoundingSphere();geometries.set(file,geometry);$('load-status').textContent=`Loading the rack · ${++loaded}/${files.length}`;}));
   for (const instance of instances) {
     const part=parts.get(instance.type);
     for (const component of part.meshes||[{file:part.file,color:0x252930,roughness:.76,metalness:.09}]) {
@@ -324,6 +316,8 @@ try {
   $('step-download').removeAttribute('aria-disabled');
   await startGPU();setMode(mode,false);
 } catch(error) {
+  document.body.dataset.fallbackReason='initialization-failed';
+  if (document.body.dataset.gpuCheck==='pending') document.body.dataset.gpuCheck='failed';
   console.error('Rack preview',error);gpuReady=false;if (renderer) renderer.dispose();status('Image view');imageView();
   if (manifest&&equipment&&hardware) rebuildCallouts();
 } finally { $('load-status').hidden=true; }

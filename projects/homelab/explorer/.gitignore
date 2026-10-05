@@ -1,4 +1,3 @@
 local-models.json
-assets/stl/
-assets/equipment/
-assets/hardware/
+*.brep
+assets/equipment/*.json

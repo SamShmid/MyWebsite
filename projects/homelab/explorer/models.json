@@ -1,0 +1,156 @@
+{
+  "sources": {
+    "base": {
+      "title": "Lab Rax 5U insert-version rack",
+      "creator": "Michael Klements",
+      "creatorUrl": "https://makerworld.com/en/@mklements",
+      "url": "https://makerworld.com/en/models/1294480-lab-rax-10-server-rack-5u#profileId-1325352",
+      "license": "MakerWorld Exclusive License",
+      "licenseUrl": "https://makerworld.com/en/models/1294480-lab-rax-10-server-rack-5u#profileId-1325352"
+    },
+    "extension": {
+      "title": "Lab Rax extensions \u00b7 insert version",
+      "creator": "Michael Klements",
+      "creatorUrl": "https://makerworld.com/en/@mklements",
+      "url": "https://makerworld.com/en/models/1304384-lab-rax-extension-side-panels-post-joiner#profileId-1337305",
+      "license": "CC BY-NC-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    },
+    "piShelf": {
+      "title": "1U 3 x Raspberry Pi 5 shelf",
+      "creator": "Michael Klements",
+      "creatorUrl": "https://makerworld.com/en/@mklements",
+      "url": "https://makerworld.com/en/models/1307431-1u-3-x-raspberry-pi-5-shelf-for-10-rack#profileId-1341054",
+      "license": "CC BY-NC-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    },
+    "switchMount": {
+      "title": "TP-Link SG1005P / SG105 10-inch rack mount",
+      "creator": "Maur\u00edcio Pessoa (Mauker)",
+      "creatorUrl": "https://www.printables.com/@Mauker",
+      "url": "https://makerworld.com/en/models/773229-tp-link-sg1005p-sg105-10-inch-rack-mount#profileId-709359",
+      "downloadSource": "https://www.printables.com/model/1045551-tp-link-sg1005p-sg105-10-inch-rack-mount",
+      "license": "CC BY-NC-SA",
+      "licenseUrl": "https://www.printables.com/model/1045551-tp-link-sg1005p-sg105-10-inch-rack-mount"
+    },
+    "zimaMount": {
+      "title": "10-inch rack panel for ZimaBoard 2",
+      "creator": "DesignBot",
+      "creatorUrl": "https://www.printables.com/@DesignBot_3113143",
+      "url": "https://makerworld.com/en/models/1346315-10-inch-rack-panel-for-zimaboard-2#profileId-1387898",
+      "downloadSource": "https://www.printables.com/model/1316574-10-inch-rack-panel-for-zimaboard-2",
+      "license": "CC BY-NC-SA",
+      "licenseUrl": "https://www.printables.com/model/1316574-10-inch-rack-panel-for-zimaboard-2"
+    },
+    "netgearMount": {
+      "title": "NETGEAR GS308E screwless 10-inch rack mount",
+      "creator": "Shrektastic",
+      "creatorUrl": "https://makerworld.com/en/@shrektastic",
+      "url": "https://makerworld.com/en/models/1859737-netgear-gs308e-screwless-10-inch-rack-mount#profileId-1988907",
+      "license": "MakerWorld Exclusive License",
+      "licenseUrl": "https://makerworld.com/en/models/1859737-netgear-gs308e-screwless-10-inch-rack-mount#profileId-1988907"
+    },
+    "keystonePanel": {
+      "title": "1/2U 12 Port Keystone Panel for 10-inch Rack",
+      "creator": "Michael Klements",
+      "creatorUrl": "https://makerworld.com/en/@mklements",
+      "url": "https://makerworld.com/en/models/1293816-1-2u-12-port-keystone-panel-for-10-rack#profileId-1324489",
+      "license": "CC BY-NC-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    },
+    "samOriginals": {
+      "title": "Sam\u2019s original rack mounts",
+      "creator": "Samuel Shmidman",
+      "license": "License not specified"
+    },
+    "shelfSupports": {
+      "title": "Lab Rax open-shelf rear supports",
+      "creator": "Michael Klements",
+      "creatorUrl": "https://makerworld.com/en/@mklements",
+      "url": "https://makerworld.com/en/models/1297318-1u-open-shelf-for-10-rack#profileId-1328922",
+      "license": "CC BY-NC-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    }
+  },
+  "conversions": {
+    "joiner": "Original insert-version STL, unchanged.",
+    "pi-shelf": "Exported from the original designer 3MF. Geometry unchanged.",
+    "switch-mount": "Original STL from the designer\u2019s alternate Printables listing, unchanged.",
+    "zima-mount": "Original STL from the designer\u2019s alternate Printables listing, unchanged.",
+    "ssd-caddy": "Original STL from the designer\u2019s alternate Printables listing, unchanged.",
+    "netgear-mount": "Original MakerWorld STL download, unchanged. Downloaded from the designer\u2019s aligned print profile.",
+    "keystone-panel": "Exported from the original designer 3MF. Geometry unchanged.",
+    "home-assistant-yellow-mount": "Original STL supplied by Samuel Shmidman, unchanged. Touching closed bodies are fused only in the derived STEP export.",
+    "minisforum-mini-pc-holder": "Original STL supplied by Samuel Shmidman, unchanged.",
+    "shelf-support-left": "Exported from Michael Klements\u2019 original shelf-support 3MF. Source triangles unchanged.",
+    "shelf-support-right": "Exported from Michael Klements\u2019 original shelf-support 3MF. Source triangles unchanged.",
+    "post": "Original insert-version mesh. Converted from the designer\u2019s 3MF without reshaping.",
+    "vent": "Original insert-version STL, unchanged.",
+    "bottom": "Original insert-version STL, unchanged.",
+    "edge": "Original insert-version STL, unchanged.",
+    "handle": "Original insert-version STL, unchanged.",
+    "foot": "Original insert-version mesh. Converted from the designer\u2019s 3MF without reshaping."
+  },
+  "originalDesigns": [
+    {
+      "id": "minisforum-mini-pc-holder",
+      "name": "Minisforum mini-PC holder",
+      "detail": "My holder for the Minisforum MS-A2 and MS-01. Two copies are installed, one in lower U9 and U10 for the MS-A2, and one in lower U12 and U13 for the MS-01.",
+      "file": "assets/stl/originals/Minisforum mini-PC holder.stl",
+      "creator": "Samuel Shmidman",
+      "license": "License not specified",
+      "note": "Original STL supplied by Samuel Shmidman. Geometry unchanged. Two installed copies, one per computer.",
+      "placementStatus": "installed",
+      "plannedQuantity": 2,
+      "plannedDevices": [
+        "Minisforum MS-A2",
+        "Minisforum MS-01"
+      ],
+      "originalFilename": "Lab Rax Shelf Rack Mount MS-01.stl",
+      "sha256": "e7ab3dd5fedf42531a97dbc5c17d29762d7aee580a485e21e71ee6ff7daf2c72",
+      "triangles": 3800,
+      "installedDevices": [
+        "Minisforum MS-A2",
+        "Minisforum MS-01"
+      ],
+      "pendingDevices": []
+    },
+    {
+      "id": "home-assistant-yellow-mount",
+      "name": "Home Assistant Yellow rack mount",
+      "detail": "My mount for Home Assistant Yellow in its translucent factory case, installed in U6 from the top.",
+      "file": "assets/stl/originals/Home Assistant Yellow Rack Mount.stl",
+      "creator": "Samuel Shmidman",
+      "license": "License not specified",
+      "note": "Original STL supplied by Samuel Shmidman. Geometry unchanged. Installed in U6.",
+      "placementStatus": "installed",
+      "plannedQuantity": 1,
+      "plannedDevices": [
+        "Home Assistant Yellow"
+      ],
+      "originalFilename": "Home Assistant Yellow Rack Mount.stl",
+      "sha256": "1df6be7698567e5ee1b20e4ac4ae15fbaed75df2a1ef4ff234668cf2a10a492a",
+      "triangles": 1612
+    },
+    {
+      "id": "base-shelf",
+      "name": "Lab Rax base shelf",
+      "detail": "My base shelf in the bottom U15, supporting the Jetson Orin Nano Super Developer Kit. Two Michael Klements rear brackets support its back mounting points.",
+      "file": "assets/stl/originals/Lab Rax Base Shelf Rack Mount v18.stl",
+      "creator": "Samuel Shmidman",
+      "license": "License not specified",
+      "note": "Original STL supplied by Samuel Shmidman. Geometry unchanged. Installed once in U15.",
+      "placementStatus": "installed",
+      "plannedQuantity": 1,
+      "plannedDevices": [
+        "NVIDIA Jetson Orin Nano Super Developer Kit"
+      ],
+      "originalFilename": "Lab Rax Base Shelf Rack Mount v18.stl",
+      "sha256": "198c8db958eed72c1e4cc06dd3baea50b8d73fceacb2e07aa79c921925f7adf2",
+      "triangles": 1508,
+      "installedDevices": [
+        "NVIDIA Jetson Orin Nano Super Developer Kit"
+      ]
+    }
+  ]
+}
