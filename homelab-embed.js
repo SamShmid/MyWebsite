@@ -1,6 +1,7 @@
 (() => {
   const frame = document.querySelector('.homelab-embed');
   if (!frame) return;
+  const note = document.querySelector('.homelab-note');
   let resizeObserver;
   let layoutObserver;
   const setHeight = height => {
@@ -10,8 +11,11 @@
     }
   };
   const measure = () => {
-    const explorer = frame.contentDocument?.getElementById('explorer');
+    const doc = frame.contentDocument;
+    const explorer = doc?.getElementById('explorer');
     if (explorer) setHeight(explorer.getBoundingClientRect().height);
+    const ready = doc?.body?.dataset?.gpuReady;
+    if (note && ready !== undefined) note.hidden = ready === 'true';
   };
   const connect = () => {
     resizeObserver?.disconnect();
@@ -24,7 +28,7 @@
       resizeObserver = new ResizeObserver(measure);
       resizeObserver.observe(explorer);
       layoutObserver = new MutationObserver(measure);
-      layoutObserver.observe(doc.body, {attributes:true, attributeFilter:['class']});
+      layoutObserver.observe(doc.body, {attributes:true, attributeFilter:['class','data-gpu-ready']});
       doc.addEventListener('load', measure, true);
       doc.fonts?.ready.then(measure);
       measure();
@@ -33,7 +37,9 @@
     frame.contentWindow?.postMessage({type:'homelab:measure'}, location.origin);
   };
   window.addEventListener('message', event => {
-    if (event.origin === location.origin && event.source === frame.contentWindow && event.data?.type === 'homelab:height') setHeight(Number(event.data.height));
+    if (event.origin !== location.origin || event.source !== frame.contentWindow) return;
+    if (event.data?.type === 'homelab:height') setHeight(Number(event.data.height));
+    if (note && event.data?.type === 'homelab:renderer' && typeof event.data.gpuReady === 'boolean') note.hidden = event.data.gpuReady;
   });
   frame.addEventListener('load', connect);
   window.addEventListener('pageshow', connect);

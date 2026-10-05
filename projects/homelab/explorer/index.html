@@ -7,7 +7,7 @@
   <meta name="referrer" content="no-referrer">
   <title>Homelab · Samuel Shmidman</title>
   <link rel="icon" href="favicon.svg">
-  <link rel="stylesheet" href="viewer.css?v=live-9">
+  <link rel="stylesheet" href="viewer.css?v=note-10">
   <script type="importmap">{"imports":{"three":"./vendor/three.webgpu.min.js","three/webgpu":"./vendor/three.webgpu.min.js"}}</script>
 </head>
 <body class="viewer-page" data-project-url="../">
@@ -22,7 +22,7 @@
       <div class="model-area" id="model-area">
         <div class="stage" id="stage">
           <div id="canvas-host" tabindex="0" role="region" aria-label="3D rack. Drag to orbit, scroll to zoom, right drag to pan. Click a part to highlight matching copies. Press Escape to clear."></div>
-          <div class="image-view" id="image-view"><img id="fallback-image" src="assets/images/screenshots/overview/perspective.jpg?v=live-9" alt="Rendered homelab rack assembly"></div>
+          <div class="image-view" id="image-view"><img id="fallback-image" src="assets/images/screenshots/overview/perspective.jpg?v=note-10" alt="Rendered homelab rack assembly"></div>
           <svg id="leaders" aria-hidden="true"></svg>
           <div id="selection" hidden role="status"><span id="selection-name"></span><span id="selection-count"></span><button id="clear-selection" aria-label="Clear selection" title="Clear selection">×</button></div>
           <div id="load-status" role="status">Loading the rack</div>
@@ -36,9 +36,9 @@
         <div class="explode-control" hidden><label for="explode">Explode</label><input id="explode" type="range" min="0" max="100" value="0" aria-valuetext="0% exploded" disabled><output id="explode-value" for="explode">0%</output></div>
       </div>
     </section>
-    <p class="viewer-note">For the best viewing experience, ensure your browser has WebGPU enabled.</p>
+    <p class="viewer-note" hidden>For the best viewing experience, ensure your browser has WebGPU enabled.</p>
     <p class="viewer-credit">Lab Rax by <a href="https://makerworld.com/en/@mklements" target="_blank" rel="noopener noreferrer">Michael Klements</a> · <a href="../#downloads">All model credits</a></p>
   </main>
-  <script type="module" src="viewer.js?v=live-9"></script>
+  <script type="module" src="viewer.js?v=note-10"></script>
 </body>
 </html>

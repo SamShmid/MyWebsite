@@ -33,6 +33,9 @@ if (projectUrl) {
 function status(text) { $('renderer-status').textContent = text; $('renderer-status').classList.toggle('sr-only',text === 'WebGPU'); }
 function imageView() {
   const showImage = !gpuReady || staticRequested;
+  document.body.dataset.gpuReady=String(gpuReady);
+  document.querySelector('.viewer-note').hidden=gpuReady;
+  if (embedded && parent !== window) parent.postMessage({type:'homelab:renderer',gpuReady},location.origin);
   if (showImage && Number($('explode').value)) { $('explode').value = '0'; applyExplosion(); }
   const image = $('fallback-image');
   image.src = `assets/images/screenshots/${mode}/perspective.jpg?v=live-9`;
