@@ -213,3 +213,5 @@ h2 { font-size: 1.4375rem; letter-spacing: -.035em; line-height: 1.4; font-weigh
 .profile-links .resume-link.is-available { color: var(--link); cursor: pointer; }
 
 .homelab-embed{display:block;width:100%;height:785px;border:1px solid var(--line);border-radius:12px;background:#11151b}.homelab .section-heading{margin-bottom:22px}@media(max-width:720px){.homelab-embed{height:680px}}
+
+.homelab-note{margin:12px 2px 0;color:var(--muted);font-size:.8rem;line-height:1.6}

@@ -79,8 +79,8 @@ The site code has no analytics, tracking cookies, browser storage, contact form,
 
 The homepage includes the rack explorer directly after Experience. The project page at `projects/homelab/` links to the public [Homelab repository](https://github.com/SamShmid/Homelab) for source files, attribution, the BOM and assembly instructions.
 
-The same-origin iframe loads lazily and sizes itself to the current mode. Fasteners automatically shows the translucent hardware view. Four screenshots cover image fallback, one three-quarter view per tab. There is no camera selector. Image mode hides Explode, Reset, and rotation. The 3D view rotates by default unless reduced motion is enabled.
+The same-origin iframe loads lazily and sizes itself to the current mode. Fasteners automatically shows the translucent hardware view. Four screenshots cover image fallback, one three-quarter view per tab, with a background matching the viewer. Image mode has no camera selector or control footer. When switching manually to images, a 3D view button returns to the initialized renderer. The 3D view rotates by default unless reduced motion is enabled.
 
-Restricted source meshes and the local availability marker are excluded from Git and hosted assets. The public build therefore uses screenshots until redistribution permission is established. Keep those exclusions in place when preparing a deployment. The raw local meshes enable the WebGPU authoring preview.
+Startup requests a WebGPU adapter and device and initializes the renderer before checking model availability. It does not exclude Safari by browser name. Restricted source meshes and the local availability marker are excluded from Git and hosted assets, so the public build currently falls back to screenshots even when WebGPU initializes successfully. Keep those exclusions in place when preparing a deployment. The raw local meshes enable the WebGPU authoring preview.
 
 The public model repository contains eleven shareable printed designs and credits links for the remaining eight. Full STEP exports are kept local and can be reconstructed with the repository’s FreeCAD script after obtaining all original source files.

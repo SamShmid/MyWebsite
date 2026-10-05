@@ -21,3 +21,16 @@
 .capture #annotations,.capture #leaders,.capture #selection{visibility:hidden}
 .capture .site-header,.capture .viewer-credit{display:none}.capture main{padding:0;max-width:none}
 .capture .stage{height:720px}.capture .viewer-controls{position:static}
+
+/* Keep the fallback image on one continuous surface without a dead control bar. */
+.display-status{display:flex;align-items:center;gap:10px}#resume-3d{padding:0 12px;font-size:11px}
+.static .model-area,.capture .model-area{background:#11151b}
+.static .stage,.static .model-area.labels-list .stage{height:clamp(360px,52vw,560px);overflow:hidden}
+.static .image-view{padding:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.static .image-view img{height:100%;width:auto;max-width:none;flex:none;object-fit:contain}
+.static .model-area.labels-list #annotations{grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));padding:16px;gap:10px;border-top:1px solid var(--line)}
+.static .model-area.labels-list #annotations:empty{padding:0;border:0}
+.static #selection{display:none}
+.viewer-note{font-size:12px;line-height:1.6;color:var(--muted);padding:14px 2px 0}
+.embedded .viewer-note{display:none}
+.capture .stage{height:560px}

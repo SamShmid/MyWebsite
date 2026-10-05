@@ -1,4 +1,5 @@
-import { annotationEntries, instancesFor, toggleSelection, labelText } from './viewer-state.mjs?v=copy-7';
+import { annotationEntries, instancesFor, toggleSelection, labelText } from './viewer-state.mjs?v=image-8';
+import { initializeWebGPU } from './gpu-startup.mjs';
 const $ = id => document.getElementById(id);
 const host = $('canvas-host'), stage = $('stage'), area = $('model-area');
 const params = new URLSearchParams(location.search);
@@ -34,17 +35,19 @@ function imageView() {
   const showImage = !gpuReady || staticRequested;
   if (showImage && Number($('explode').value)) { $('explode').value = '0'; applyExplosion(); }
   const image = $('fallback-image');
-  image.src = `assets/images/screenshots/${mode}/perspective.jpg`;
+  image.src = `assets/images/screenshots/${mode}/perspective.jpg?v=image-8`;
   image.alt = `${mode === 'hardware' ? 'Translucent fastener' : 'Three-quarter'} screenshot of the homelab rack.`;
-  image.onerror = () => { image.onerror = null; image.src = 'assets/images/screenshots/overview/perspective.jpg'; image.alt = 'Three-quarter screenshot of the homelab rack.'; };
+  image.onerror = () => { image.onerror = null; image.src = 'assets/images/screenshots/overview/perspective.jpg?v=image-8'; image.alt = 'Three-quarter screenshot of the homelab rack.'; };
   $('image-view').hidden = !showImage; host.hidden = showImage;
+  document.querySelector('.viewer-controls').hidden = showImage;
+  $('resume-3d').hidden = !(gpuReady && staticRequested);
   $('reset-camera').hidden = showImage;
   document.body.classList.toggle('static',showImage);
   document.querySelector('.explode-control').hidden = showImage;
   $('rotation').closest('label').hidden = showImage;
   $('explode').disabled = showImage; $('rotation').disabled = showImage;
   $('explode').title = showImage ? 'Explode is available in 3D view' : 'Explode the entire assembly';
-  $('interaction-hint').textContent = showImage ? 'Image view' : 'Drag to orbit · Scroll to zoom';
+  $('interaction-hint').textContent = 'Drag to orbit · Scroll to zoom';
   $('static-toggle').textContent = staticRequested ? '3D view' : 'Image view';
   $('static-toggle').hidden = !gpuReady;
   if (gpuReady) status(showImage ? 'Image view' : 'WebGPU');
@@ -179,7 +182,7 @@ function updateCallouts() {
 }
 function cameraPreset(name,immediate=false) {
   cameraName=name;
-  if (!camera) { imageView(); return; }
+  if (!camera || !gpuReady || staticRequested) { imageView(); return; }
   const joints=name==='joints';
   const occupied=manifest.rackDatum.occupied.find(item=>name===`u${item.fromTop}`||(joints&&item.fromTop===15));
   const closeup=Boolean(occupied),target=new THREE.Vector3(0,closeup?occupied.centerY:manifest.height*.49,joints?-95:closeup?65:0);
@@ -221,16 +224,25 @@ function renderFrame(time) {
 }
 async function startGPU() {
   if (staticRequested) { status('Image view');imageView();return; }
+  status('Trying WebGPU');
+  document.body.dataset.gpuCheck='pending';
+  const startup = await initializeWebGPU(navigator.gpu, async device => {
+    THREE=await import('three/webgpu');
+    return new THREE.WebGPURenderer({antialias:true,alpha:true,device});
+  });
+  renderer=startup.renderer;
+  document.body.dataset.gpuCheck=renderer?'ready':startup.reason;
+  if (!renderer) { status('Image view');imageView();return; }
   if (document.body.hasAttribute('data-local-models')) {
-    // Restricted source meshes are retained only in the local authoring copy.
+    // A missing deployment asset is not a browser capability failure.
     const localAssets = await fetch('./local-models.json').catch(()=>null);
-    if (!localAssets?.ok) { status('Image view');imageView();return; }
+    if (!localAssets?.ok) {
+      document.body.dataset.fallbackReason='models-unavailable';
+      renderer.dispose();renderer=null;
+      status('Image view');imageView();return;
+    }
   }
-  if (!navigator.gpu||!await navigator.gpu.requestAdapter()) { status('Image view');imageView();return; }
-  THREE=await import('three/webgpu');
   const [{OrbitControls},{STLLoader}]=await Promise.all([import('./vendor/OrbitControls.js'),import('./vendor/STLLoader.js')]);
-  renderer=new THREE.WebGPURenderer({antialias:true,alpha:true});await renderer.init();
-  if (!renderer.backend.isWebGPUBackend) throw new Error('WebGPU backend unavailable');
   renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setClearColor(0x000000,0);renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.35;
   host.append(renderer.domElement);scene=new THREE.Scene();
   scene.add(new THREE.HemisphereLight(0xe4efff,0x48505b,2.1));
@@ -285,10 +297,17 @@ $('clear-selection').addEventListener('click',()=>selectPart(null));
 $('explode').addEventListener('input',applyExplosion);
 $('rotation').addEventListener('change',()=>{if (controls) {controls.autoRotate=$('rotation').checked;invalidate();}});
 $('static-toggle').addEventListener('click',()=>{staticRequested=!staticRequested;imageView();});
+$('resume-3d').addEventListener('click',()=>{staticRequested=false;imageView();});
 document.addEventListener('keydown',event=>{if (event.key==='Escape') {selectPart(null);document.querySelector('.model-options').open=false;}});
 window.addEventListener('resize',()=>{if (host.hidden) imageView();else {updateLayoutMode();updateCallouts();}});
 if (embedded && parent !== window) {
-  new ResizeObserver(()=>parent.postMessage({type:'homelab:height',height:Math.ceil($('explorer').getBoundingClientRect().height)},location.origin)).observe($('explorer'));
+  const reportHeight=()=>parent.postMessage({type:'homelab:height',height:Math.ceil($('explorer').getBoundingClientRect().height)},location.origin);
+  new ResizeObserver(reportHeight).observe($('explorer'));
+  window.addEventListener('message',event=>{
+    if (event.source===parent && event.origin===location.origin && event.data?.type==='homelab:measure') reportHeight();
+  });
+  window.addEventListener('load',reportHeight);
+  reportHeight();
 }
 reducedMotion.addEventListener('change',()=>{if (reducedMotion.matches) {$('rotation').checked=false;if (controls) controls.autoRotate=false;}});
 try {
