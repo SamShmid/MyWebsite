@@ -22,3 +22,11 @@
 !/privacy/
 /privacy/*
 !/privacy/index.html
+
+!/projects/homelab/
+!/projects/homelab/**
+/projects/homelab/explorer/local-models.json
+/projects/homelab/explorer/assets/stl/
+/projects/homelab/explorer/assets/equipment/
+/projects/homelab/explorer/assets/hardware/
+/projects/homelab/**/.gitignore

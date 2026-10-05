@@ -1,6 +1,6 @@
 # Samuel Shmidman — portfolio
 
-A lightweight personal portfolio built with HTML, CSS, and JavaScript. No framework, dependencies, or build step.
+A lightweight personal portfolio built with HTML, CSS, and JavaScript. No framework or build step. The optional 3D explorer uses bundled Three.js modules.
 
 Source: https://github.com/SamShmid/MyWebsite
 
@@ -17,7 +17,7 @@ Open [`assets/`](assets/):
 ## Edit the site
 
 - `index.html` — introduction, work/education, featured projects.
-- `projects/index.html` — 16-project catalog. Most cards are informational listings; outgoing links include the EZ-TES iOS download, CDCW Devpost entry, and verified public GitHub repositories. The EZ-TES GitHub link is explicitly labeled as its website repository. Homelab documentation is marked coming soon.
+- `projects/index.html` — 16-project catalog. Most cards are informational listings; outgoing links include the EZ-TES iOS download, CDCW Devpost entry, and verified public GitHub repositories. The EZ-TES GitHub link is explicitly labeled as its website repository. Homelab links to its dedicated model catalog and GitHub downloads.
 - `privacy/index.html` — privacy information and accessibility controls.
 - `styles.css` — shared appearance and responsive layout.
 - `favicon.svg` — the selected Machined single-S mark on warm orange, shared across all pages.
@@ -73,3 +73,14 @@ Only website files belong in this repository. Keep drafts, private research, cre
 Includes keyboard navigation, focus indicators, reduced-motion support, image alternatives, touch behavior, and responsive layouts. The character background plays one 5.5-second pass per home page load. The decorative ducks remain, and there is no footer motion control. Tooltips support keyboard focus and Escape. Full browser, device, and assistive-technology testing is still needed. This is not a WCAG conformance certification.
 
 The site code has no analytics, tracking cookies, browser storage, contact form, or chat. The résumé is a direct same-origin PDF download. Cloudflare provides the public hosting. The privacy page describes the provider's request-data handling.
+
+
+## Homelab
+
+The homepage includes the rack explorer directly after Experience. The project page at `projects/homelab/` links to the public [Homelab repository](https://github.com/SamShmid/Homelab) for source files, attribution, the BOM and assembly instructions.
+
+The same-origin iframe loads lazily and sizes itself to the current mode. Fasteners automatically shows the translucent hardware view. Four screenshots cover image fallback, one three-quarter view per tab. There is no camera selector. Image mode hides Explode, Reset, and rotation. The 3D view rotates by default unless reduced motion is enabled.
+
+Restricted source meshes and the local availability marker are excluded from Git and hosted assets. The public build therefore uses screenshots until redistribution permission is established. Keep those exclusions in place when preparing a deployment. The raw local meshes enable the WebGPU authoring preview.
+
+The public model repository contains eleven shareable printed designs and credits links for the remaining eight. Full STEP exports are kept local and can be reconstructed with the repository’s FreeCAD script after obtaining all original source files.

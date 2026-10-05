@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="no-referrer">
+  <title>Homelab · Samuel Shmidman</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="viewer.css?v=copy-7">
+  <script type="importmap">{"imports":{"three":"./vendor/three.webgpu.min.js","three/webgpu":"./vendor/three.webgpu.min.js"}}</script>
+</head>
+<body class="viewer-page" data-project-url="../" data-local-models>
+  <a class="skip" href="#explorer">Skip to rack explorer</a>
+  <header class="site-header"><a class="wordmark" href="../../../">samuel<span>.</span>shmidman</a><nav class="project-nav" aria-label="Homelab project"><a href="#explorer" aria-current="page">Homelab</a><a href="../#downloads">STLs</a><a href="../#bom">Parts list</a></nav></header>
+  <main>
+    <section class="explorer" id="explorer" aria-label="Interactive homelab rack explorer">
+      <div class="toolbar">
+        <div class="view-tabs" role="group" aria-label="Explorer view"><button data-mode="overview" aria-pressed="true">The rack</button><button data-mode="equipment" aria-pressed="false">Equipment</button><button data-mode="parts" aria-pressed="false">Printed parts</button><button data-mode="hardware" aria-pressed="false">Fasteners</button></div>
+        <span id="renderer-status" role="status">Loading</span>
+      </div>
+      <div class="model-area" id="model-area">
+        <div class="stage" id="stage">
+          <div id="canvas-host" tabindex="0" role="region" aria-label="3D rack. Drag to orbit, scroll to zoom, right drag to pan. Click a part to highlight matching copies. Press Escape to clear."></div>
+          <div class="image-view" id="image-view"><img id="fallback-image" src="assets/images/screenshots/overview/perspective.jpg" alt="Rendered homelab rack assembly"></div>
+          <svg id="leaders" aria-hidden="true"></svg>
+          <div id="selection" hidden role="status"><span id="selection-name"></span><span id="selection-count"></span><button id="clear-selection" aria-label="Clear selection" title="Clear selection">×</button></div>
+          <div id="load-status" role="status">Loading the rack</div>
+        </div>
+        <div id="annotations" aria-label="Model labels"></div>
+      </div>
+      <div class="viewer-controls">
+        <button id="reset-camera" title="Reset view" hidden>Reset</button>
+        <details class="model-options"><summary>Options</summary><div class="options-popover"><label><input type="checkbox" id="rotation" disabled> Rotate</label><button id="static-toggle">Image view</button><a id="step-download" href="../#assemblies">Assembly instructions ↗</a></div></details>
+        <span class="gesture-hint" id="interaction-hint">Drag to orbit · Scroll to zoom</span>
+        <div class="explode-control" hidden><label for="explode">Explode</label><input id="explode" type="range" min="0" max="100" value="0" aria-valuetext="0% exploded" disabled><output id="explode-value" for="explode">0%</output></div>
+      </div>
+    </section>
+    <p class="viewer-credit">Lab Rax by <a href="https://makerworld.com/en/@mklements" target="_blank" rel="noopener noreferrer">Michael Klements</a> · <a href="../#downloads">All model credits</a></p>
+  </main>
+  <script type="module" src="viewer.js?v=copy-7"></script>
+</body>
+</html>

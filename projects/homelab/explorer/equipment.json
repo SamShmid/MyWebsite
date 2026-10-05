@@ -1,0 +1,1401 @@
+{
+  "units": "mm",
+  "parts": [
+    {
+      "id": "pi5",
+      "name": "Raspberry Pi 5 \u00b7 16 GB",
+      "kind": "equipment",
+      "anchor": [
+        42.5,
+        28,
+        9
+      ],
+      "detail": "16 GB RAM per board. Manufacturer Pi 5 CAD, with Ethernet and USB ports facing the front of the rack.",
+      "sourceUrl": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+      "meshes": [
+        {
+          "file": "assets/equipment/pi5-b5a780.stl",
+          "color": "#b5a780",
+          "roughness": 0.58,
+          "metalness": 0.35
+        },
+        {
+          "file": "assets/equipment/pi5-33383e.stl",
+          "color": "#33383e",
+          "roughness": 0.58,
+          "metalness": 0.05
+        },
+        {
+          "file": "assets/equipment/pi5-b8bec5.stl",
+          "color": "#b8bec5",
+          "roughness": 0.58,
+          "metalness": 0.35
+        },
+        {
+          "file": "assets/equipment/pi5-26292d.stl",
+          "color": "#26292d",
+          "roughness": 0.58,
+          "metalness": 0.05
+        },
+        {
+          "file": "assets/equipment/pi5-23834d.stl",
+          "color": "#23834d",
+          "roughness": 0.58,
+          "metalness": 0.05
+        }
+      ]
+    },
+    {
+      "id": "poe-hat-f",
+      "name": "Waveshare PoE HAT (F)",
+      "kind": "equipment",
+      "anchor": [
+        -7.49,
+        18,
+        0
+      ],
+      "detail": "One PoE HAT per Pi, with the manufacturer\u2019s fan, GPIO connector and PoE connector geometry. IEEE 802.3af/at. The separate kit heatsink is not included in the supplier CAD.",
+      "sourceUrl": "https://www.waveshare.com/wiki/PoE_HAT_(F)",
+      "meshes": [
+        {
+          "file": "assets/equipment/poe-hat-f-216886.stl",
+          "color": "#216886",
+          "roughness": 0.58,
+          "metalness": 0.05
+        },
+        {
+          "file": "assets/equipment/poe-hat-f-262b32.stl",
+          "color": "#262b32",
+          "roughness": 0.58,
+          "metalness": 0.05
+        },
+        {
+          "file": "assets/equipment/poe-hat-f-abb0b6.stl",
+          "color": "#abb0b6",
+          "roughness": 0.58,
+          "metalness": 0.35
+        }
+      ]
+    },
+    {
+      "id": "tl-sg1005p",
+      "name": "TP-Link TL-SG1005P",
+      "kind": "equipment",
+      "anchor": [
+        0,
+        5,
+        12.5
+      ],
+      "detail": "Five Gigabit Ethernet ports, with PoE on ports 1\u20134. 99.8 \u00d7 98 \u00d7 25 mm case. Port details are a visual reference. Hardware revision and PoE budget remain to be confirmed.",
+      "sourceUrl": "https://www.tp-link.com/us/business-networking/soho-switch-poe/tl-sg1005p/",
+      "fidelity": "Datasheet-sized presentation model",
+      "meshes": [
+        {
+          "file": "assets/equipment/tl-sg1005p-30363c.stl",
+          "color": "#30363c",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/tl-sg1005p-aab5bd.stl",
+          "color": "#aab5bd",
+          "roughness": 0.57,
+          "metalness": 0.5
+        },
+        {
+          "file": "assets/equipment/tl-sg1005p-0b1015.stl",
+          "color": "#0b1015",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/tl-sg1005p-c0a566.stl",
+          "color": "#c0a566",
+          "roughness": 0.57,
+          "metalness": 0.5
+        },
+        {
+          "file": "assets/equipment/tl-sg1005p-73bb64.stl",
+          "color": "#73bb64",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/tl-sg1005p-cfab47.stl",
+          "color": "#cfab47",
+          "roughness": 0.57,
+          "metalness": 0.08
+        }
+      ]
+    },
+    {
+      "id": "zimaboard2",
+      "name": "ZimaBoard 2",
+      "kind": "equipment",
+      "anchor": [
+        -2,
+        58,
+        13
+      ],
+      "detail": "Manufacturer CAD with its integrated finned metal CPU cooler and lower enclosure. Front connector faces have illustrative surface detail. Two SATA connections serve the two 1 TB drives. RAM and onboard storage configuration are not yet specified.",
+      "sourceUrl": "https://www.zimaspace.com/products/single-board2-server",
+      "fidelity": "Manufacturer STEP with cosmetic port-face detail",
+      "meshes": [
+        {
+          "file": "assets/equipment/zimaboard2-b5bac0.stl",
+          "color": "#b5bac0",
+          "roughness": 0.5,
+          "metalness": 0.55
+        },
+        {
+          "file": "assets/equipment/zimaboard2-707780.stl",
+          "color": "#707780",
+          "roughness": 0.5,
+          "metalness": 0.55
+        },
+        {
+          "file": "assets/equipment/zimaboard2-292d32.stl",
+          "color": "#292d32",
+          "roughness": 0.5,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/zimaboard2-1c5551.stl",
+          "color": "#1c5551",
+          "roughness": 0.5,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/zimaboard2-aab5bd.stl",
+          "color": "#aab5bd",
+          "roughness": 0.5,
+          "metalness": 0.55
+        },
+        {
+          "file": "assets/equipment/zimaboard2-d0b879.stl",
+          "color": "#d0b879",
+          "roughness": 0.5,
+          "metalness": 0.55
+        },
+        {
+          "file": "assets/equipment/zima-port-detail-0b1015.stl",
+          "color": "#0b1015",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/zima-port-detail-147aa9.stl",
+          "color": "#147aa9",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/zima-port-detail-c0a566.stl",
+          "color": "#c0a566",
+          "roughness": 0.57,
+          "metalness": 0.5
+        },
+        {
+          "file": "assets/equipment/zima-port-detail-73bb64.stl",
+          "color": "#73bb64",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/zima-port-detail-aab5bd.stl",
+          "color": "#aab5bd",
+          "roughness": 0.57,
+          "metalness": 0.5
+        }
+      ]
+    },
+    {
+      "id": "crucial-1tb",
+      "name": "Crucial 1 TB SATA SSD",
+      "kind": "equipment",
+      "anchor": [
+        0,
+        35,
+        7
+      ],
+      "detail": "1 TB per drive, 2 TB total installed capacity. 2.5-inch SATA, 7 mm format. The pictured BX500 is the provisional visual reference. Exact SSD model still to confirm.",
+      "sourceUrl": "https://www.crucial.com/ssd/bx500/ct1000bx500ssd1",
+      "fidelity": "Provisional BX500 presentation model",
+      "meshes": [
+        {
+          "file": "assets/equipment/crucial-1tb-303237.stl",
+          "color": "#303237",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/crucial-1tb-0c1015.stl",
+          "color": "#0c1015",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/crucial-1tb-c0a566.stl",
+          "color": "#c0a566",
+          "roughness": 0.57,
+          "metalness": 0.5
+        },
+        {
+          "file": "assets/equipment/crucial-1tb-0784b5.stl",
+          "color": "#0784b5",
+          "roughness": 0.57,
+          "metalness": 0.08
+        }
+      ]
+    },
+    {
+      "id": "netgear-gs308",
+      "name": "Netgear GS308",
+      "kind": "equipment",
+      "anchor": [
+        0,
+        5,
+        13
+      ],
+      "detail": "Eight-port Gigabit Ethernet switch. Fanless and unmanaged. The display uses the earlier 158 \u00d7 102 \u00d7 26 mm GS308 chassis as a provisional fit for this mount. Exact hardware revision and retaining-peg fit are still to confirm.",
+      "sourceUrl": "https://www.netgear.com/business/wired/switches/unmanaged/gs308/",
+      "fidelity": "Datasheet-sized presentation model. Enclosure and component details are illustrative.",
+      "meshes": [
+        {
+          "file": "assets/equipment/netgear-gs308-case.stl",
+          "color": "#30363c",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/netgear-gs308-metal.stl",
+          "color": "#aab5bd",
+          "roughness": 0.57,
+          "metalness": 0.5
+        },
+        {
+          "file": "assets/equipment/netgear-gs308-recesses.stl",
+          "color": "#0b1015",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/netgear-gs308-contacts.stl",
+          "color": "#c0a566",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/netgear-gs308-leds.stl",
+          "color": "#73bb64",
+          "roughness": 0.57,
+          "metalness": 0.08
+        }
+      ]
+    },
+    {
+      "id": "home-assistant-yellow",
+      "name": "Home Assistant Yellow",
+      "kind": "equipment",
+      "anchor": [
+        0,
+        35,
+        26
+      ],
+      "detail": "Home Assistant Yellow inside its translucent factory case, held by my custom printed mount. Raspberry Pi Compute Module 5 Rev 1.0 with 4 GB RAM. 1 TB SSD installed \u00b7 KIOXIA EXCERIA G2. 123 \u00d7 123 \u00d7 36 mm enclosure, Gigabit Ethernet and two USB 2.0 ports. PoE configuration is not yet specified.",
+      "sourceUrl": "https://www.home-assistant.io/yellow/",
+      "fidelity": "Datasheet-sized presentation model. Enclosure and component details are illustrative.",
+      "meshes": [
+        {
+          "file": "assets/equipment/home-assistant-yellow-carrier.stl",
+          "color": "#cdb72f",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/home-assistant-yellow-module.stl",
+          "color": "#33715a",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/home-assistant-yellow-metal.stl",
+          "color": "#b5bac0",
+          "roughness": 0.57,
+          "metalness": 0.5
+        },
+        {
+          "file": "assets/equipment/home-assistant-yellow-components.stl",
+          "color": "#24292f",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/home-assistant-yellow-led-da5d52.stl",
+          "color": "#da5d52",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/home-assistant-yellow-led-7cc573.stl",
+          "color": "#7cc573",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/home-assistant-yellow-led-e5c84f.stl",
+          "color": "#e5c84f",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/home-assistant-yellow-case.stl",
+          "color": "#c1d3dd",
+          "roughness": 0.42,
+          "metalness": 0.08,
+          "opacity": 0.23
+        }
+      ],
+      "specs": {
+        "computeModule": "Raspberry Pi Compute Module 5 Rev 1.0",
+        "ramGB": 4,
+        "storage": {
+          "capacityTB": 1,
+          "model": "KIOXIA EXCERIA G2",
+          "interface": "NVMe",
+          "formFactor": "M.2 2280",
+          "confirmation": "Capacity confirmed by Samuel Shmidman. Model and interface read from Home Assistant\u2019s System hardware screen.",
+          "maximumDimensionsMm": [
+            80.15,
+            22.15,
+            2.23
+          ],
+          "manufacturerSource": "https://europe.kioxia.com/content/dam/kioxia/shared/personal/support/download/ssd/asset/productbrief/KIOXIA_Exceria_G2_Product_Brief.pdf"
+        }
+      }
+    },
+    {
+      "id": "yellow-ssd",
+      "name": "KIOXIA EXCERIA G2 \u00b7 1 TB",
+      "kind": "equipment",
+      "anchor": [
+        0,
+        40,
+        2
+      ],
+      "detail": "Installed inside Home Assistant Yellow. 1 TB NVMe SSD, M.2 2280. Model identified in the device\u2019s hardware inventory. Presentation geometry follows the manufacturer\u2019s maximum 80.15 \u00d7 22.15 \u00d7 2.23 mm envelope.",
+      "sourceUrl": "https://europe.kioxia.com/en-europe/personal/ssd/exceria-g2.html",
+      "fidelity": "Datasheet-sized presentation model. Enclosure and component details are illustrative.",
+      "meshes": [
+        {
+          "file": "assets/equipment/yellow-ssd-board.stl",
+          "color": "#254238",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/yellow-ssd-chips.stl",
+          "color": "#24282b",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/yellow-ssd-label.stl",
+          "color": "#33363c",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/yellow-ssd-accent.stl",
+          "color": "#45a054",
+          "roughness": 0.57,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/yellow-ssd-contacts.stl",
+          "color": "#bda45a",
+          "roughness": 0.57,
+          "metalness": 0.08
+        }
+      ]
+    },
+    {
+      "id": "minisforum-ms-a2",
+      "name": "Minisforum MS-A2",
+      "kind": "equipment",
+      "anchor": [
+        0,
+        0,
+        25
+      ],
+      "detail": "MINISFORUM MS-A2 with its top cover fitted. AMD Ryzen 9 9955HX, 16 cores and 32 threads, up to 5.4 GHz. 96 GB Crucial DDR5-5600, 2 \u00d7 48 GB SO-DIMMs, CT2K48G56C46S5. 1 TB Crucial P310 M.2 NVMe SSD, CT1000P310SSD8. NVIDIA RTX 4000 SFF Ada Generation with 20 GB VRAM. Two 10 GbE SFP+ and two 2.5 GbE RJ45 ports. My original holder occupies the lower half of U9 and all of U10, with two U of empty space above.",
+      "sourceUrl": "https://store.minisforum.com/products/minisforum-ms-a2-workstation",
+      "fidelity": "Manufacturer-sized closed-case presentation model. Ports and vents are illustrative. Internal GPU clearance is not validated.",
+      "specs": {
+        "cpu": {
+          "model": "AMD Ryzen 9 9955HX",
+          "cores": 16,
+          "threads": 32,
+          "maxBoostGHz": 5.4
+        },
+        "memory": {
+          "manufacturer": "Crucial",
+          "kitPartNumber": "CT2K48G56C46S5",
+          "capacityGB": 96,
+          "quantity": 2,
+          "moduleCapacityGB": 48,
+          "type": "DDR5 SO-DIMM",
+          "ratedDataRateMTs": 5600,
+          "configuredDataRateVerified": false
+        },
+        "storage": {
+          "capacityTB": 1,
+          "quantity": 1,
+          "model": "Crucial P310",
+          "formFactor": "M.2",
+          "type": "SSD",
+          "sameModelAs": "minisforum-ms-01",
+          "partNumber": "CT1000P310SSD8",
+          "interface": "NVMe",
+          "sizeCode": "2280",
+          "verification": "Model read directly from MS-01. Sam confirmed the same drive model in MS-A2. MS-A2 has not been queried directly."
+        },
+        "gpu": {
+          "model": "NVIDIA RTX 4000 SFF Ada Generation",
+          "vramGB": 20,
+          "quantity": 1,
+          "identification": "Matched to Sam\u2019s description of an NVIDIA RTX SFF Ada card with 20 GB VRAM. Exact model number has not been read from the device."
+        },
+        "network": {
+          "sfp10GbPorts": 2,
+          "rj45_2_5GbPorts": 2
+        },
+        "caseDimensionsMm": {
+          "width": 189,
+          "depth": 196,
+          "height": 48
+        },
+        "presentation": "Top cover fitted at Sam\u2019s request. His reference photo shows the top removed. No assertion of internal GPU clearance with the stock lid."
+      },
+      "meshes": [
+        {
+          "file": "assets/equipment/minisforum-ms-a2-shell.stl",
+          "color": "#747b82",
+          "roughness": 0.43,
+          "metalness": 0.55
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-front.stl",
+          "color": "#464d53",
+          "roughness": 0.43,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-recesses.stl",
+          "color": "#10151a",
+          "roughness": 0.43,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-metal.stl",
+          "color": "#a6afb8",
+          "roughness": 0.43,
+          "metalness": 0.55
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-usb.stl",
+          "color": "#25609d",
+          "roughness": 0.43,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-contacts.stl",
+          "color": "#b89a56",
+          "roughness": 0.43,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-power.stl",
+          "color": "#99c8ef",
+          "roughness": 0.43,
+          "metalness": 0.08
+        }
+      ]
+    },
+    {
+      "id": "minisforum-ms-01",
+      "name": "Minisforum MS-01",
+      "kind": "equipment",
+      "anchor": [
+        0,
+        0,
+        25
+      ],
+      "detail": "MINISFORUM MS-01 with its top cover fitted. Intel Core i9-13900H, 14 cores and 20 threads, up to 5.4 GHz. 32 GB Crucial DDR5, 2 \u00d7 16 GB SO-DIMMs, CT2K16G56C46S5. Kit rated at 5600 MT/s. Running at 5200 MT/s. 1 TB Crucial P310 M.2 NVMe SSD, CT1000P310SSD8. NVIDIA RTX A2000 with 8 GB VRAM. Ampere architecture. Two 10 GbE SFP+ ports, two 2.5 GbE RJ45 ports and two USB4 ports. My original holder occupies lower U12 and all of U13. U11 and upper U12 are empty.",
+      "sourceUrl": "https://store.minisforum.com/products/minisforum-ms-01-workstation",
+      "fidelity": "Manufacturer-sized presentation envelope with illustrative exterior details. Internal GPU fit is not validated.",
+      "specs": {
+        "cpu": {
+          "model": "Intel Core i9-13900H",
+          "cores": 14,
+          "performanceCores": 6,
+          "efficiencyCores": 8,
+          "threads": 20,
+          "maxBoostGHz": 5.4
+        },
+        "memory": {
+          "manufacturer": "Crucial",
+          "kitPartNumber": "CT2K16G56C46S5",
+          "capacityGB": 32,
+          "quantity": 2,
+          "moduleCapacityGB": 16,
+          "type": "DDR5 SO-DIMM",
+          "ratedDataRateMTs": 5600,
+          "platformPublishedDataRateMTs": 5200,
+          "configuredDataRateVerified": true,
+          "configuredDataRateMTs": 5200,
+          "installedModulePartNumber": "CT16G56C46S5.C8D",
+          "verification": "SMBIOS reports two 16 GB modules, rated 5600 MT/s and configured at 5200 MT/s."
+        },
+        "storage": {
+          "capacityTB": 1,
+          "quantity": 1,
+          "model": "Crucial P310",
+          "formFactor": "M.2",
+          "type": "SSD",
+          "sameModelAs": "minisforum-ms-a2",
+          "partNumber": "CT1000P310SSD8",
+          "interface": "NVMe",
+          "sizeCode": "2280",
+          "verification": "Read from the installed NVMe device on 2026-10-01. 931.5 GiB reported, consistent with nominal 1 TB."
+        },
+        "gpu": {
+          "model": "NVIDIA RTX A2000",
+          "vramGB": 8,
+          "quantity": 1,
+          "userDescription": "NVIDIA RTX A2000, 8 GB VRAM, discrete card",
+          "identification": "PCI enumeration identifies NVIDIA GA107, vendor/device 10de:25fa. Sam identifies the installed hardware as a discrete RTX A2000 card. The PCI lookup name is retained separately as diagnostic evidence.",
+          "pciReportedName": "NVIDIA Corporation GA107 [RTX A2000 Embedded GPU]",
+          "architecture": "Ampere",
+          "chip": "GA107",
+          "pciDeviceId": "10de:25fa",
+          "referenceVramGB": 8,
+          "referenceMemoryType": "GDDR6",
+          "modelVerified": true,
+          "physicalBoardModel": null,
+          "vramVerification": "8 GB recorded from the published specification for PCI device 10de:25fa and accepted by Sam on 2026-10-01. Capacity was not measured with NVIDIA-SMI. No driver or VM changes were made."
+        },
+        "network": {
+          "sfp10GbPorts": 2,
+          "rj45_2_5GbPorts": 2
+        },
+        "usb4Ports": 2,
+        "caseDimensionsMm": {
+          "width": 189,
+          "depth": 196,
+          "height": 48
+        },
+        "presentation": "Closed exterior with illustrative ports and vents. Internal GPU clearance is not validated."
+      },
+      "meshes": [
+        {
+          "file": "assets/equipment/minisforum-ms-a2-shell.stl",
+          "color": "#444a50",
+          "roughness": 0.43,
+          "metalness": 0.55
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-front.stl",
+          "color": "#30363c",
+          "roughness": 0.43,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-recesses.stl",
+          "color": "#10151a",
+          "roughness": 0.43,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-metal.stl",
+          "color": "#a6afb8",
+          "roughness": 0.43,
+          "metalness": 0.55
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-01-usb.stl",
+          "color": "#25609d",
+          "roughness": 0.43,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-contacts.stl",
+          "color": "#b89a56",
+          "roughness": 0.43,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-a2-power.stl",
+          "color": "#73c9a3",
+          "roughness": 0.43,
+          "metalness": 0.08
+        },
+        {
+          "file": "assets/equipment/minisforum-ms-01-usb2.stl",
+          "color": "#10151a",
+          "roughness": 0.43,
+          "metalness": 0.08
+        }
+      ]
+    },
+    {
+      "id": "jetson-orin-nano",
+      "name": "Jetson Orin Nano Super",
+      "kind": "equipment",
+      "anchor": [
+        -9,
+        58,
+        34.77
+      ],
+      "detail": "NVIDIA Jetson Orin Nano Super Developer Kit with its stock heatsink and fan. 8 GB LPDDR5 shared memory. 6-core Arm Cortex-A78AE CPU and NVIDIA Ampere GPU with 1,024 CUDA cores and 32 Tensor cores. Up to 67 INT8 TOPS in Super mode. Gigabit Ethernet, four USB 3 Type-A ports, USB-C and DisplayPort. On my original base shelf in bottom U15, with a pair of rear support brackets.",
+      "sourceUrl": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/nano-super-developer-kit/",
+      "fidelity": "Official kit envelope. Illustrative exterior and board details. Shelf positioning is provisional within U15.",
+      "specs": {
+        "cpu": {
+          "model": "6-core Arm Cortex-A78AE v8.2"
+        },
+        "gpu": {
+          "architecture": "NVIDIA Ampere",
+          "cudaCores": 1024,
+          "tensorCores": 32
+        },
+        "memory": {
+          "capacityGB": 8,
+          "type": "128-bit LPDDR5",
+          "sharedWithGPU": true
+        },
+        "aiPerformance": {
+          "upToINT8TOPS": 67,
+          "basis": "Published Super-mode maximum, not a measurement of this kit."
+        },
+        "storage": {
+          "model": null,
+          "capacityGB": null,
+          "verification": "Installed storage not specified by Sam."
+        },
+        "network": {
+          "rj45GigabitPorts": 1
+        },
+        "usb": {
+          "usb3TypeA": 4,
+          "usbCDataPorts": 1
+        },
+        "display": "DisplayPort",
+        "caseDimensionsMm": {
+          "width": 103,
+          "depth": 90.5,
+          "height": 34.77
+        }
+      },
+      "meshes": [
+        {
+          "file": "assets/equipment/jetson-orin-nano-base.stl",
+          "color": "#1b1f24",
+          "roughness": 0.5,
+          "metalness": 0.12
+        },
+        {
+          "file": "assets/equipment/jetson-orin-nano-pcb.stl",
+          "color": "#252c2c",
+          "roughness": 0.5,
+          "metalness": 0.12
+        },
+        {
+          "file": "assets/equipment/jetson-orin-nano-module.stl",
+          "color": "#355244",
+          "roughness": 0.5,
+          "metalness": 0.12
+        },
+        {
+          "file": "assets/equipment/jetson-orin-nano-heatsink.stl",
+          "color": "#292d32",
+          "roughness": 0.5,
+          "metalness": 0.12
+        },
+        {
+          "file": "assets/equipment/jetson-orin-nano-fan.stl",
+          "color": "#11151a",
+          "roughness": 0.5,
+          "metalness": 0.12
+        },
+        {
+          "file": "assets/equipment/jetson-orin-nano-connectors.stl",
+          "color": "#bcc4c9",
+          "roughness": 0.5,
+          "metalness": 0.6
+        },
+        {
+          "file": "assets/equipment/jetson-orin-nano-sockets.stl",
+          "color": "#11161c",
+          "roughness": 0.5,
+          "metalness": 0.12
+        },
+        {
+          "file": "assets/equipment/jetson-orin-nano-usb.stl",
+          "color": "#356f99",
+          "roughness": 0.5,
+          "metalness": 0.12
+        },
+        {
+          "file": "assets/equipment/jetson-orin-nano-contacts.stl",
+          "color": "#bda66c",
+          "roughness": 0.5,
+          "metalness": 0.6
+        },
+        {
+          "file": "assets/equipment/jetson-orin-nano-solder.stl",
+          "color": "#a7afb4",
+          "roughness": 0.5,
+          "metalness": 0.6
+        },
+        {
+          "file": "assets/equipment/jetson-orin-nano-led.stl",
+          "color": "#83c85f",
+          "roughness": 0.5,
+          "metalness": 0.12
+        }
+      ]
+    }
+  ],
+  "instances": [
+    {
+      "id": "pi5-1",
+      "type": "pi5",
+      "name": "Left Pi 5 \u00b7 16 GB",
+      "section": "U2 from top",
+      "matrix": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -103.625,
+        636.0448,
+        35.0,
+        1.0
+      ],
+      "explode": [
+        -24,
+        52,
+        75
+      ],
+      "optional": false
+    },
+    {
+      "id": "poe-hat-f-1",
+      "type": "poe-hat-f",
+      "name": "Left Waveshare PoE HAT",
+      "section": "U2 from top",
+      "matrix": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -75.645,
+        636.0448,
+        77.49,
+        1.0
+      ],
+      "explode": [
+        -24,
+        90,
+        75
+      ],
+      "optional": false
+    },
+    {
+      "id": "pi5-2",
+      "type": "pi5",
+      "name": "Center Pi 5 \u00b7 16 GB",
+      "section": "U2 from top",
+      "matrix": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -28.625,
+        636.0448,
+        35.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        52,
+        75
+      ],
+      "optional": false
+    },
+    {
+      "id": "poe-hat-f-2",
+      "type": "poe-hat-f",
+      "name": "Center Waveshare PoE HAT",
+      "section": "U2 from top",
+      "matrix": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.645,
+        636.0448,
+        77.49,
+        1.0
+      ],
+      "explode": [
+        0,
+        90,
+        75
+      ],
+      "optional": false
+    },
+    {
+      "id": "pi5-3",
+      "type": "pi5",
+      "name": "Right Pi 5 \u00b7 16 GB",
+      "section": "U2 from top",
+      "matrix": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        46.375,
+        636.0448,
+        35.0,
+        1.0
+      ],
+      "explode": [
+        24,
+        52,
+        75
+      ],
+      "optional": false
+    },
+    {
+      "id": "poe-hat-f-3",
+      "type": "poe-hat-f",
+      "name": "Right Waveshare PoE HAT",
+      "section": "U2 from top",
+      "matrix": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        74.355,
+        636.0448,
+        77.49,
+        1.0
+      ],
+      "explode": [
+        24,
+        90,
+        75
+      ],
+      "optional": false
+    },
+    {
+      "id": "tl-sg1005p-1",
+      "type": "tl-sg1005p",
+      "name": "TP-Link TL-SG1005P",
+      "section": "U3 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        589.9,
+        123.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        22,
+        115
+      ],
+      "optional": false
+    },
+    {
+      "id": "zimaboard2-1",
+      "type": "zimaboard2",
+      "name": "ZimaBoard 2 + CPU cooler",
+      "section": "U4 from top",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -18.1537,
+        547.20949973,
+        53.74259197,
+        1.0
+      ],
+      "explode": [
+        -24,
+        35,
+        115
+      ],
+      "optional": false
+    },
+    {
+      "id": "crucial-1tb-1",
+      "type": "crucial-1tb",
+      "name": "Upper Crucial SSD \u00b7 1 TB",
+      "section": "U4 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        65.49148636,
+        559.57530822,
+        118.5,
+        1.0
+      ],
+      "explode": [
+        32,
+        40,
+        155
+      ],
+      "optional": false
+    },
+    {
+      "id": "crucial-1tb-2",
+      "type": "crucial-1tb",
+      "name": "Lower Crucial SSD \u00b7 1 TB",
+      "section": "U4 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        65.49148636,
+        542.57530822,
+        118.5,
+        1.0
+      ],
+      "explode": [
+        32,
+        0,
+        165
+      ],
+      "optional": false
+    },
+    {
+      "id": "netgear-gs308-1",
+      "type": "netgear-gs308",
+      "name": "Netgear GS308",
+      "section": "U5 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0273,
+        500.728,
+        124.998,
+        1.0
+      ],
+      "explode": [
+        0,
+        10,
+        125
+      ],
+      "optional": false
+    },
+    {
+      "id": "home-assistant-yellow-1",
+      "type": "home-assistant-yellow",
+      "name": "Home Assistant Yellow",
+      "section": "U6 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        452.275,
+        116.8,
+        1.0
+      ],
+      "explode": [
+        0,
+        10,
+        125
+      ],
+      "optional": false
+    },
+    {
+      "id": "yellow-ssd-1",
+      "type": "yellow-ssd",
+      "name": "KIOXIA EXCERIA G2 \u00b7 1 TB",
+      "section": "U6 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        28.0,
+        462.775,
+        89.8,
+        1.0
+      ],
+      "explode": [
+        10,
+        38,
+        130
+      ],
+      "optional": false
+    },
+    {
+      "id": "minisforum-ms-a2-1",
+      "type": "minisforum-ms-a2",
+      "name": "Minisforum MS-A2",
+      "section": "U9\u2013U10 from top \u00b7 lower U9 + full U10",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        274.475,
+        123.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        -35,
+        140
+      ],
+      "optional": false
+    },
+    {
+      "id": "minisforum-ms-01-1",
+      "type": "minisforum-ms-01",
+      "name": "Minisforum MS-01",
+      "section": "U12\u2013U13 from top \u00b7 lower U12 + full U13",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        141.125,
+        123.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        -55,
+        140
+      ],
+      "optional": false
+    },
+    {
+      "id": "jetson-orin-nano-1",
+      "type": "jetson-orin-nano",
+      "name": "Jetson Orin Nano Super \u00b7 8 GB",
+      "section": "U15 from top \u00b7 bottom shelf",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        52.225,
+        115.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        -75,
+        140
+      ],
+      "optional": false
+    }
+  ],
+  "mounting": {
+    "shelfDeckY": 630.0748000000001,
+    "piBoardBottomY": 636.0748000000001,
+    "shelfStandoffLengthMm": 6,
+    "rackSlotCenterY": 647.075,
+    "rackHoleX": [
+      -118.263,
+      118.263
+    ],
+    "shelfSlotX": [
+      -118.2625,
+      118.2625
+    ],
+    "piHoleGridMm": [
+      58,
+      49
+    ],
+    "hardwareStatus": "Assembly hardware is in hardware.json. Kit dimensions requiring confirmation are labeled in the BOM.",
+    "shelfDesignerHardwareReference": {
+      "source": "https://makerworld.com/en/models/1307431-1u-3-x-raspberry-pi-5-shelf-for-10-rack#profileId-1341054",
+      "perPi": {
+        "M2.5 x 8 mm button head screws": 4,
+        "M2.5 nuts": 4,
+        "M2.5 x 6 mm brass standoffs": 4
+      },
+      "status": "Reference only, to reconcile with the PoE HAT kit during final hardware pass"
+    },
+    "switchAndZima": {
+      "switchCaseMm": [
+        99.8,
+        98,
+        25
+      ],
+      "switchMountApertureMm": [
+        101,
+        25.5
+      ],
+      "switchFeet": "Removed as specified by the mount designer",
+      "zimaSupportPlaneSourceY": 17.36580849,
+      "zimaNativeBottomZ": -7.3,
+      "zimaToMount": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -18.1728,
+        10.06580849,
+        42.1616,
+        1.0
+      ],
+      "caddyFrontLipSourceZ": -28.09580803,
+      "caddyVerticalPitchMm": 17,
+      "ssdEnvelopeMm": [
+        69.85,
+        100.33,
+        7
+      ],
+      "ssdModelConfirmed": false,
+      "hardwareStatus": "Fasteners, physical fit and SATA cable engagement remain for the hardware pass"
+    },
+    "networkYellow": {
+      "netgearReferenceEnvelopeMm": [
+        158,
+        102,
+        26
+      ],
+      "netgearReferenceSource": "https://www.downloads.netgear.com/files/GDC/GS308/GS308_SL_IG_20Aug12.pdf",
+      "netgearRevisionConfirmed": false,
+      "netgearMountOpeningMm": [
+        158.586,
+        25.988
+      ],
+      "netgearMountFit": "Source opening is nominally 26 mm high. Original triangles preserved, including the 0.012 mm source deviation. Retaining-peg and hardware revision fit are not certified.",
+      "yellowCaseEnvelopeMm": [
+        123,
+        123,
+        36
+      ],
+      "yellowCaseConfirmedBySam": true,
+      "yellowPlacement": "Case rests on the source 4 mm floor, recessed 0.2 mm behind the front wall. Details are illustrative.",
+      "keystoneRailHoleY": 440.727,
+      "keystoneSourcePanelHeightMm": 22.599984,
+      "hardwareStatus": "Final fasteners and exact physical clearances deferred"
+    },
+    "msa2": {
+      "envelopeMm": [
+        189,
+        196,
+        48
+      ],
+      "sourceOpeningWidthMm": 190.2,
+      "sourceOpeningHeightMm": 49.2,
+      "deckThicknessMm": 4,
+      "sourceFrontY": -120,
+      "sourceRearY": 76,
+      "holderUnscaled": true,
+      "closedLidRequestedBySam": true,
+      "finalFastenersDeferred": true
+    },
+    "ms01": {
+      "envelopeMm": [
+        189,
+        196,
+        48
+      ],
+      "sourceOpeningWidthMm": 190.2,
+      "sourceOpeningHeightMm": 49.2,
+      "deckThicknessMm": 4,
+      "sourceFrontY": -120,
+      "sourceRearY": 76,
+      "holderUnscaled": true,
+      "finalFastenersDeferred": true
+    },
+    "jetson": {
+      "envelopeMm": [
+        103,
+        90.5,
+        34.77
+      ],
+      "deckThicknessMm": 4,
+      "positionWithinShelf": "Centered with connectors facing forward. Sam has specified U15 but not an exact lateral position.",
+      "finalFastenersDeferred": true
+    },
+    "rearShelfSupports": {
+      "pairs": 3,
+      "source": "https://makerworld.com/en/models/1297318-1u-open-shelf-for-10-rack#profileId-1328922",
+      "deckSlotCentersNative": [
+        [
+          -97.7,
+          109,
+          2
+        ],
+        [
+          97.7,
+          109,
+          2
+        ]
+      ],
+      "publishedShelfFasteners": "Designer specifies two M6 \u00d7 10 mm screws and nuts per shelf-to-support pair. Final BOM and fastener meshes deferred."
+    }
+  }
+}

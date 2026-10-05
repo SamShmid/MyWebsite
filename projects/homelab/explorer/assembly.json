@@ -1,0 +1,1901 @@
+{
+  "version": 1,
+  "units": "mm",
+  "rackUnits": 15,
+  "sectionUnits": [
+    5,
+    5,
+    5
+  ],
+  "width": 282.25,
+  "depth": 240.0,
+  "height": 786.25,
+  "sourceDesigner": "See models.json for individual creator credits",
+  "sources": {
+    "base": "https://makerworld.com/en/models/1294480-lab-rax-10-server-rack-5u#profileId-1325352",
+    "extension": "https://makerworld.com/en/models/1304384-lab-rax-extension-side-panels-post-joiner#profileId-1337305",
+    "piShelf": "https://makerworld.com/en/models/1307431-1u-3-x-raspberry-pi-5-shelf-for-10-rack#profileId-1341054",
+    "switchMount": "https://makerworld.com/en/models/773229-tp-link-sg1005p-sg105-10-inch-rack-mount#profileId-709359",
+    "zimaMount": "https://makerworld.com/en/models/1346315-10-inch-rack-panel-for-zimaboard-2#profileId-1387898",
+    "netgearMount": "https://makerworld.com/en/models/1859737-netgear-gs308e-screwless-10-inch-rack-mount#profileId-1988907",
+    "keystonePanel": "https://makerworld.com/en/models/1293816-1-2u-12-port-keystone-panel-for-10-rack#profileId-1324489",
+    "shelfSupports": "https://makerworld.com/en/models/1297318-1u-open-shelf-for-10-rack#profileId-1328922"
+  },
+  "parts": [
+    {
+      "id": "post",
+      "name": "5U vertical post",
+      "file": "assets/stl/insert-frame/5U Vertical Post.stl",
+      "detail": "Original Michael Klements insert-version geometry. M6 bolts and brass inserts secure the frame.",
+      "triangles": 3596,
+      "sha256": "176cd66c779ea2882668799e33ca462f96aa7a35dd267d6437d23d69243c5232",
+      "alignmentRmsMm": 1.609068,
+      "source": "base"
+    },
+    {
+      "id": "joiner",
+      "name": "Insert-version post joiner",
+      "file": "assets/stl/insert-frame/Brass Insert Post Joiner.stl",
+      "detail": "Original insert-version post joiner. Four per section joint.",
+      "triangles": 1556,
+      "sha256": "e1d71193a9601f2415d0df0e7bc33d8f0a6b6ac790d163c22460d3ced8a797fc",
+      "source": "extension",
+      "alignmentRmsMm": 2.024828
+    },
+    {
+      "id": "vent",
+      "name": "Honeycomb crossbar",
+      "file": "assets/stl/insert-frame/Ventilated Horizontal Edge.stl",
+      "detail": "Original Michael Klements insert-version geometry. M6 bolts and brass inserts secure the frame.",
+      "triangles": 17748,
+      "sha256": "e7b183788fee7e4b1e972a2a6b0b43f73fc3a4df6481b18fad8ac8f766905adf",
+      "alignmentRmsMm": 0.600439,
+      "source": "base"
+    },
+    {
+      "id": "bottom",
+      "name": "Lower crossbar",
+      "file": "assets/stl/insert-frame/Solid Horizontal Edge.stl",
+      "detail": "Original Michael Klements insert-version geometry. M6 bolts and brass inserts secure the frame.",
+      "triangles": 13424,
+      "sha256": "c2252970a9a59caee69c6bc608c4d0564f3d378a4bfa9db0c80ce0466c1c36d9",
+      "alignmentRmsMm": 0.751375,
+      "source": "base"
+    },
+    {
+      "id": "edge",
+      "name": "Side frame edge",
+      "file": "assets/stl/insert-frame/Top Edge.stl",
+      "detail": "Original Michael Klements insert-version geometry. M6 bolts and brass inserts secure the frame.",
+      "triangles": 1636,
+      "sha256": "6fec213b412f23a77ff829ab52516b04a44f6463174aea023d67fb257f7b39e3",
+      "alignmentRmsMm": 1.262984,
+      "source": "base"
+    },
+    {
+      "id": "handle",
+      "name": "Top handle",
+      "file": "assets/stl/insert-frame/Handle.stl",
+      "detail": "Original Lab Rax carry handle. One on each side of the top frame.",
+      "triangles": 7904,
+      "sha256": "42312112fa651d2b22e762f1a75f481fe32b3aea2fd00eba306a229d75931911",
+      "alignmentRmsMm": 4.2e-05,
+      "source": "base"
+    },
+    {
+      "id": "foot",
+      "name": "Rack foot",
+      "file": "assets/stl/insert-frame/Foot.stl",
+      "detail": "Original printed foot beneath each corner of the bottom frame.",
+      "triangles": 2082,
+      "sha256": "eb8c3dcfe48913c23c65a8aea86695b4551170763da71ce3793a07cdce757b34",
+      "alignmentRmsMm": 4e-06,
+      "source": "base"
+    },
+    {
+      "id": "floor",
+      "name": "Bottom panel",
+      "file": "assets/stl/base/Bottom Panel.stl",
+      "detail": "Original solid bottom panel seated in the lower frame.",
+      "triangles": 12,
+      "sha256": "608d6f389504c91caaee5fcfe8316f5e98f9deb014fb78dac0e400fb6c80fcd8",
+      "alignmentRmsMm": 0.0,
+      "source": "base"
+    },
+    {
+      "id": "pi-shelf",
+      "name": "1U triple Raspberry Pi 5 shelf",
+      "file": "assets/stl/shelves/1U 3 Pi 5 Plate.stl",
+      "source": "piShelf",
+      "group": "equipment-mount",
+      "detail": "Original Lab Rax shelf in the second U from the top. One printed shelf holds all three Raspberry Pi 5 boards.",
+      "triangles": 3456,
+      "sha256": "8d4a6eb8ec896b61c312068c9aadc80f3628ba8acd68b1d8b3b984851441d499"
+    },
+    {
+      "id": "switch-mount",
+      "name": "TP-Link single-switch rack mount",
+      "file": "assets/stl/mounts/tp-link-sg1005-10-inch-rack-mount.stl",
+      "source": "switchMount",
+      "family": "TP-Link rack mount",
+      "group": "equipment-mount",
+      "detail": "Original single-switch design by Mauker. Holds the TL-SG1005P in U3. Remove the switch\u2019s rubber feet for this mount, as the designer specifies.",
+      "triangles": 3384,
+      "sha256": "1d1049e66a315bf36ea304740172a6ab31b3a5b0b2bb13c6436c9ea9ae17d221"
+    },
+    {
+      "id": "zima-mount",
+      "name": "ZimaBoard 2 rack panel",
+      "file": "assets/stl/mounts/zimaboard2-rack.stl",
+      "source": "zimaMount",
+      "family": "ZimaBoard rack mount",
+      "group": "equipment-mount",
+      "detail": "Original DesignBot 1U panel in U4, with a ZimaBoard 2 opening and two stacked SSD bays.",
+      "triangles": 12262,
+      "sha256": "852c0bc77677631b598fb60ab8a29364d0f90f65e14373c2e22aac5987e4694c"
+    },
+    {
+      "id": "ssd-caddy",
+      "name": "ZimaBoard SSD caddy",
+      "file": "assets/stl/mounts/zimaboard2-drive-caddy.stl",
+      "source": "zimaMount",
+      "family": "ZimaBoard rack mount",
+      "group": "equipment-mount",
+      "detail": "Two copies of the original removable drive caddy, one for each 1 TB SSD in the ZimaBoard assembly.",
+      "triangles": 25742,
+      "sha256": "96e38dd0e28ecffcd1f3a2805bdc7a4cd96846f2bdebf152862586222b5d6e77"
+    },
+    {
+      "id": "netgear-mount",
+      "name": "Netgear GS308 rack mount",
+      "file": "assets/stl/mounts/netgear-gs308e-mount.stl",
+      "source": "netgearMount",
+      "family": "Netgear rack mount",
+      "group": "equipment-mount",
+      "detail": "Original Shrektastic screwless mount in U5. The source design is for a GS308E. The GS308 chassis revision and retaining-peg fit remain to be confirmed.",
+      "sha256": "d4423a2fab3c7de657f95ff6c7220e98739ed07cc350eb05b0bebe25f5620175",
+      "triangles": 4908
+    },
+    {
+      "id": "home-assistant-yellow-mount",
+      "name": "Home Assistant Yellow rack mount",
+      "file": "assets/stl/originals/Home Assistant Yellow Rack Mount.stl",
+      "detail": "My mount for Home Assistant Yellow in its translucent factory case, installed in U6 from the top.",
+      "sha256": "1df6be7698567e5ee1b20e4ac4ae15fbaed75df2a1ef4ff234668cf2a10a492a",
+      "triangles": 1612,
+      "source": "samOriginals",
+      "family": "My design",
+      "group": "equipment-mount"
+    },
+    {
+      "id": "keystone-panel",
+      "name": "Half-U 12-port keystone panel",
+      "file": "assets/stl/mounts/12 Port Patch Panel.stl",
+      "source": "keystonePanel",
+      "family": "Lab Rax",
+      "group": "equipment-mount",
+      "detail": "Original Michael Klements panel immediately below Home Assistant Yellow, at the top of U7. Twelve empty keystone openings. Jack types and occupied ports are not yet specified.",
+      "sha256": "b008916f629ee8db4e6eb2e23f8fb1c16a753565fca65dcdd044a8ff62e64af6",
+      "triangles": 1428
+    },
+    {
+      "id": "minisforum-mini-pc-holder",
+      "name": "Minisforum mini-PC holder",
+      "file": "assets/stl/originals/Minisforum mini-PC holder.stl",
+      "detail": "My holder for the Minisforum MS-A2 and MS-01. Two copies are installed, one in lower U9 and U10 for the MS-A2, and one in lower U12 and U13 for the MS-01.",
+      "sha256": "e7ab3dd5fedf42531a97dbc5c17d29762d7aee580a485e21e71ee6ff7daf2c72",
+      "triangles": 3800,
+      "source": "samOriginals",
+      "family": "My design",
+      "group": "equipment-mount"
+    },
+    {
+      "id": "base-shelf",
+      "name": "Lab Rax base shelf",
+      "file": "assets/stl/originals/Lab Rax Base Shelf Rack Mount v18.stl",
+      "detail": "My base shelf in the bottom U15, supporting the Jetson Orin Nano Super Developer Kit. Two Michael Klements rear brackets support its back mounting points.",
+      "sha256": "198c8db958eed72c1e4cc06dd3baea50b8d73fceacb2e07aa79c921925f7adf2",
+      "triangles": 1508,
+      "source": "samOriginals",
+      "family": "My design",
+      "group": "equipment-mount"
+    },
+    {
+      "id": "shelf-support-left",
+      "name": "Rear shelf support \u00b7 left",
+      "file": "assets/stl/mounts/Shelf Support Left.stl",
+      "source": "shelfSupports",
+      "family": "Lab Rax",
+      "group": "equipment-mount",
+      "detail": "Michael Klements\u2019 original left rear bracket. Three copies support the MS-A2 holder, MS-01 holder and bottom Jetson shelf. The horizontal tab meets each shelf\u2019s rear mounting slot.",
+      "sha256": "f402794edec93ffdd6cc553975a28b9591bb4a2e10ec711f54dd76e545ef67c1",
+      "triangles": 1460
+    },
+    {
+      "id": "shelf-support-right",
+      "name": "Rear shelf support \u00b7 right",
+      "file": "assets/stl/mounts/Shelf Support Right.stl",
+      "source": "shelfSupports",
+      "family": "Lab Rax",
+      "group": "equipment-mount",
+      "detail": "Michael Klements\u2019 original right rear bracket. Three copies support the MS-A2 holder, MS-01 holder and bottom Jetson shelf. The horizontal tab meets each shelf\u2019s rear mounting slot.",
+      "sha256": "f17332444e99c9c6a6f839086001a1f28dae13d8a36c19a0e243d665c9a07de4",
+      "triangles": 1460
+    }
+  ],
+  "instances": [
+    {
+      "id": "post-1",
+      "type": "post",
+      "name": "Front left post",
+      "section": "5U base",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        47.0,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        -48.895,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-2",
+      "type": "post",
+      "name": "Front right post",
+      "section": "5U base",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        141.125,
+        269.25,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        -48.895,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-3",
+      "type": "post",
+      "name": "Rear left post",
+      "section": "5U base",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -141.125,
+        269.25,
+        -120.0,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        -48.895,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-4",
+      "type": "post",
+      "name": "Rear right post",
+      "section": "5U base",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        141.125,
+        47.0,
+        -120.0,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        -48.895,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-5",
+      "type": "post",
+      "name": "Front left post",
+      "section": "Extension 01",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        269.25,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        0.0,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-6",
+      "type": "post",
+      "name": "Front right post",
+      "section": "Extension 01",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        141.125,
+        491.5,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        0.0,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-7",
+      "type": "post",
+      "name": "Rear left post",
+      "section": "Extension 01",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -141.125,
+        491.5,
+        -120.0,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        0.0,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-8",
+      "type": "post",
+      "name": "Rear right post",
+      "section": "Extension 01",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        141.125,
+        269.25,
+        -120.0,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        0.0,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-9",
+      "type": "post",
+      "name": "Front left post",
+      "section": "Extension 02",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        491.5,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        48.895,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-10",
+      "type": "post",
+      "name": "Front right post",
+      "section": "Extension 02",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        141.125,
+        713.75,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        48.895,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-11",
+      "type": "post",
+      "name": "Rear left post",
+      "section": "Extension 02",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -141.125,
+        713.75,
+        -120.0,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        48.895,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "post-12",
+      "type": "post",
+      "name": "Rear right post",
+      "section": "Extension 02",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        141.125,
+        491.5,
+        -120.0,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        48.895,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "joiner-1",
+      "type": "joiner",
+      "name": "Front left joiner",
+      "section": "Section joint 1",
+      "matrix": [
+        -0.0,
+        -0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -134.125,
+        249.3999939,
+        108.85001335000001,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        -24.4475,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "joiner-2",
+      "type": "joiner",
+      "name": "Front right joiner",
+      "section": "Section joint 1",
+      "matrix": [
+        -0.0,
+        -0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -0.0,
+        -0.0,
+        0.0,
+        134.125,
+        289.1000061,
+        108.85001335000001,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        -24.4475,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "joiner-3",
+      "type": "joiner",
+      "name": "Rear left joiner",
+      "section": "Section joint 1",
+      "matrix": [
+        -0.0,
+        -0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -134.125,
+        289.1000061,
+        -108.85001335000001,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        -24.4475,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "joiner-4",
+      "type": "joiner",
+      "name": "Rear right joiner",
+      "section": "Section joint 1",
+      "matrix": [
+        -0.0,
+        -0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -0.0,
+        -0.0,
+        0.0,
+        134.125,
+        249.3999939,
+        -108.85001335000001,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        -24.4475,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "joiner-5",
+      "type": "joiner",
+      "name": "Front left joiner",
+      "section": "Section joint 2",
+      "matrix": [
+        -0.0,
+        -0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -134.125,
+        471.6499939,
+        108.85001335000001,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        24.4475,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "joiner-6",
+      "type": "joiner",
+      "name": "Front right joiner",
+      "section": "Section joint 2",
+      "matrix": [
+        -0.0,
+        -0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -0.0,
+        -0.0,
+        0.0,
+        134.125,
+        511.3500061,
+        108.85001335000001,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        24.4475,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "joiner-7",
+      "type": "joiner",
+      "name": "Rear left joiner",
+      "section": "Section joint 2",
+      "matrix": [
+        -0.0,
+        -0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -134.125,
+        511.3500061,
+        -108.85001335000001,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        24.4475,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "joiner-8",
+      "type": "joiner",
+      "name": "Rear right joiner",
+      "section": "Section joint 2",
+      "matrix": [
+        -0.0,
+        -0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -0.0,
+        -0.0,
+        0.0,
+        134.125,
+        471.6499939,
+        -108.85001335000001,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        24.4475,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "vent-1",
+      "type": "vent",
+      "name": "Front honeycomb crossbar",
+      "section": "Top frame",
+      "matrix": [
+        0.0,
+        0.70710678,
+        -0.70710678,
+        0.0,
+        1.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.70710678,
+        -0.70710678,
+        0.0,
+        -141.12501306,
+        710.65000744,
+        125.09999422,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        74.28574798914957,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "bottom-1",
+      "type": "bottom",
+      "name": "Front lower crossbar",
+      "section": "Base frame",
+      "matrix": [
+        -0.0,
+        0.70710678,
+        0.70710678,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.70710678,
+        -0.70710678,
+        0.0,
+        -141.12500469,
+        6.89999906,
+        81.90000127,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        -74.2857476430488,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "vent-2",
+      "type": "vent",
+      "name": "Rear honeycomb crossbar",
+      "section": "Top frame",
+      "matrix": [
+        -0.0,
+        0.70710678,
+        0.70710678,
+        0.0,
+        -1.0,
+        -0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.70710678,
+        0.70710678,
+        0.0,
+        141.12501306,
+        710.65000744,
+        -125.09999422,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        74.28574798914957,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "bottom-2",
+      "type": "bottom",
+      "name": "Rear lower crossbar",
+      "section": "Base frame",
+      "matrix": [
+        0.0,
+        0.70710678,
+        -0.70710678,
+        0.0,
+        -1.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678,
+        0.0,
+        141.12500469,
+        6.89999906,
+        -81.90000127,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        -74.2857476430488,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "edge-1",
+      "type": "edge",
+      "name": "Left upper side edge",
+      "section": "Top frame",
+      "matrix": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        -141.125,
+        748.75,
+        85.0,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        77.1925,
+        0.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "edge-2",
+      "type": "edge",
+      "name": "Left lower side edge",
+      "section": "Base frame",
+      "matrix": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        -141.125,
+        12.0,
+        -85.0,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        -77.1925,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "handle-1",
+      "type": "handle",
+      "name": "Left top handle",
+      "section": "Top frame",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -136.625,
+        748.75,
+        85.00000763,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        145.16750000000002,
+        0.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "edge-3",
+      "type": "edge",
+      "name": "Right upper side edge",
+      "section": "Top frame",
+      "matrix": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        141.125,
+        748.75,
+        -85.0,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        77.1925,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "edge-4",
+      "type": "edge",
+      "name": "Right lower side edge",
+      "section": "Base frame",
+      "matrix": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        141.125,
+        12.0,
+        85.0,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        -77.1925,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "handle-2",
+      "type": "handle",
+      "name": "Right top handle",
+      "section": "Top frame",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        136.625,
+        748.75,
+        -85.00000763,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        145.16750000000002,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "foot-1",
+      "type": "foot",
+      "name": "Front right foot",
+      "section": "Base frame",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        47.0,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        -100.3625008392334,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "foot-2",
+      "type": "foot",
+      "name": "Rear left foot",
+      "section": "Base frame",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        141.125,
+        47.0,
+        -120.0,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        -100.3625008392334,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "foot-3",
+      "type": "foot",
+      "name": "Rear right foot",
+      "section": "Base frame",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        47.0,
+        -10.0,
+        1.0
+      ],
+      "explode": [
+        55.0,
+        -100.3625008392334,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "foot-4",
+      "type": "foot",
+      "name": "Front left foot",
+      "section": "Base frame",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        141.125,
+        47.0,
+        10.0,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        -100.3625008392334,
+        55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "floor-1",
+      "type": "floor",
+      "name": "Bottom panel",
+      "section": "Base frame",
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        114.02499104,
+        13.19999695,
+        -86.5,
+        1.0
+      ],
+      "explode": [
+        -55.0,
+        -80.44850088119507,
+        -55.0
+      ],
+      "optional": false
+    },
+    {
+      "id": "pi-shelf-1",
+      "type": "pi-shelf",
+      "name": "Triple Pi shelf",
+      "section": "U2 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        432.977008,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        35,
+        75
+      ],
+      "optional": false
+    },
+    {
+      "id": "switch-mount-1",
+      "type": "switch-mount",
+      "name": "TP-Link rack mount",
+      "section": "U3 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        602.65,
+        123.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        8,
+        105
+      ],
+      "optional": false
+    },
+    {
+      "id": "zima-mount-1",
+      "type": "zima-mount",
+      "name": "ZimaBoard rack panel",
+      "section": "U4 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0191,
+        557.27530822,
+        95.90419197,
+        1.0
+      ],
+      "explode": [
+        0,
+        -20,
+        110
+      ],
+      "optional": false
+    },
+    {
+      "id": "ssd-caddy-1",
+      "type": "ssd-caddy",
+      "name": "Upper SSD caddy",
+      "section": "U4 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0191,
+        574.27530822,
+        -29.9702301,
+        1.0
+      ],
+      "explode": [
+        32,
+        12,
+        155
+      ],
+      "optional": false
+    },
+    {
+      "id": "ssd-caddy-2",
+      "type": "ssd-caddy",
+      "name": "Lower SSD caddy",
+      "section": "U4 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0191,
+        557.27530822,
+        -29.9702301,
+        1.0
+      ],
+      "explode": [
+        32,
+        -25,
+        165
+      ],
+      "optional": false
+    },
+    {
+      "id": "netgear-mount-1",
+      "type": "netgear-mount",
+      "name": "Netgear GS308 holder",
+      "section": "U5 from top",
+      "matrix": [
+        0.70710678,
+        -0.70710678,
+        0.0,
+        0.0,
+        -0.70710678,
+        -0.70710678,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        694.744631,
+        124.998,
+        1.0
+      ],
+      "explode": [
+        0,
+        -15,
+        110
+      ],
+      "optional": false
+    },
+    {
+      "id": "home-assistant-yellow-mount-1",
+      "type": "home-assistant-yellow-mount",
+      "name": "Sam\u2019s Home Assistant Yellow holder",
+      "section": "U6 from top",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        448.275,
+        3.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        -30,
+        110
+      ],
+      "optional": false
+    },
+    {
+      "id": "keystone-panel-1",
+      "type": "keystone-panel",
+      "name": "Half-U keystone panel",
+      "section": "U7 from top \u00b7 upper half",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        210.727,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        -50,
+        110
+      ],
+      "optional": false
+    },
+    {
+      "id": "minisforum-holder-msa2",
+      "type": "minisforum-mini-pc-holder",
+      "name": "Sam\u2019s MS-A2 holder",
+      "section": "U9\u2013U10 from top \u00b7 lower U9 + full U10",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        270.475,
+        3.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        -70,
+        110
+      ],
+      "optional": false
+    },
+    {
+      "id": "minisforum-holder-ms01",
+      "type": "minisforum-mini-pc-holder",
+      "name": "Sam\u2019s MS-01 holder",
+      "section": "U12\u2013U13 from top \u00b7 lower U12 + full U13",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        137.125,
+        3.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        -95,
+        110
+      ],
+      "optional": false
+    },
+    {
+      "id": "base-shelf-jetson",
+      "type": "base-shelf",
+      "name": "Sam\u2019s Jetson shelf",
+      "section": "U15 from top \u00b7 bottom shelf",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        48.225,
+        3.0,
+        1.0
+      ],
+      "explode": [
+        0,
+        -110,
+        110
+      ],
+      "optional": false
+    },
+    {
+      "id": "shelf-support-left-ms-a2",
+      "type": "shelf-support-left",
+      "name": "MS-A2 rear support \u00b7 left",
+      "section": "U10 from top \u00b7 rear mounting point",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        77.377208,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        -30,
+        0,
+        -80
+      ],
+      "optional": false
+    },
+    {
+      "id": "shelf-support-left-ms-01",
+      "type": "shelf-support-left",
+      "name": "MS-01 rear support \u00b7 left",
+      "section": "U13 from top \u00b7 rear mounting point",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        -55.972792,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        -30,
+        0,
+        -80
+      ],
+      "optional": false
+    },
+    {
+      "id": "shelf-support-left-jetson",
+      "type": "shelf-support-left",
+      "name": "Jetson rear support \u00b7 left",
+      "section": "U15 from top \u00b7 rear mounting point",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        -144.872792,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        -30,
+        0,
+        -80
+      ],
+      "optional": false
+    },
+    {
+      "id": "shelf-support-right-ms-a2",
+      "type": "shelf-support-right",
+      "name": "MS-A2 rear support \u00b7 right",
+      "section": "U10 from top \u00b7 rear mounting point",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        77.377208,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        30,
+        0,
+        -80
+      ],
+      "optional": false
+    },
+    {
+      "id": "shelf-support-right-ms-01",
+      "type": "shelf-support-right",
+      "name": "MS-01 rear support \u00b7 right",
+      "section": "U13 from top \u00b7 rear mounting point",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        -55.972792,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        30,
+        0,
+        -80
+      ],
+      "optional": false
+    },
+    {
+      "id": "shelf-support-right-jetson",
+      "type": "shelf-support-right",
+      "name": "Jetson rear support \u00b7 right",
+      "section": "U15 from top \u00b7 rear mounting point",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -141.125,
+        -144.872792,
+        120.0,
+        1.0
+      ],
+      "explode": [
+        30,
+        0,
+        -80
+      ],
+      "optional": false
+    }
+  ],
+  "downloads": {
+    "step": "assets/downloads/lab-rax-15u-assembly.step",
+    "stls": "assets/downloads/lab-rax-source-stls.zip"
+  },
+  "rackDatum": {
+    "unitHeightMm": 44.45,
+    "numbering": "top-down",
+    "railBottomY": 47.0,
+    "railTopY": 713.75,
+    "occupied": [
+      {
+        "fromTop": 2,
+        "units": 1,
+        "name": "Triple Raspberry Pi 5 shelf",
+        "centerY": 647.075,
+        "bottomY": 624.85,
+        "topY": 669.3
+      },
+      {
+        "fromTop": 3,
+        "units": 1,
+        "name": "TP-Link PoE switch",
+        "centerY": 602.625,
+        "bottomY": 580.4,
+        "topY": 624.85
+      },
+      {
+        "fromTop": 4,
+        "units": 1,
+        "name": "ZimaBoard 2 and two SSDs",
+        "centerY": 558.175,
+        "bottomY": 535.9499999999999,
+        "topY": 580.4
+      },
+      {
+        "fromTop": 5,
+        "units": 1,
+        "name": "Netgear GS308",
+        "centerY": 513.725,
+        "bottomY": 491.5,
+        "topY": 535.95
+      },
+      {
+        "fromTop": 6,
+        "units": 1,
+        "name": "Home Assistant Yellow",
+        "centerY": 469.275,
+        "bottomY": 447.04999999999995,
+        "topY": 491.5
+      },
+      {
+        "fromTop": 7,
+        "units": 0.5,
+        "name": "Half-U 12-port keystone panel",
+        "centerY": 434.3248,
+        "bottomY": 423.024808,
+        "topY": 445.62479199999996,
+        "placement": "Upper U7 rail hole. Original 22.6 mm panel height retained."
+      },
+      {
+        "fromTop": 9,
+        "startOffsetU": 0.5,
+        "units": 1.5,
+        "name": "Minisforum MS-A2 in Sam\u2019s holder",
+        "centerY": 302.5875,
+        "bottomY": 269.25,
+        "topY": 335.92499999999995,
+        "placement": "Lower U9 and full U10. Original holder slots register to U10. Source height is 57.2 mm within the 1.5U allocation."
+      },
+      {
+        "fromTop": 12,
+        "startOffsetU": 0.5,
+        "units": 1.5,
+        "name": "Minisforum MS-01 in Sam\u2019s holder",
+        "centerY": 169.23749999999995,
+        "bottomY": 135.89999999999998,
+        "topY": 202.575,
+        "placement": "Lower U12 and full U13. Original holder slots register to U13. Source height is 57.2 mm within the 1.5U allocation."
+      },
+      {
+        "fromTop": 15,
+        "units": 1,
+        "name": "Jetson on Sam\u2019s base shelf",
+        "centerY": 69.22499999999991,
+        "bottomY": 47.0,
+        "topY": 91.44999999999993
+      }
+    ],
+    "reservedEmpty": [
+      {
+        "fromTop": 7,
+        "startOffsetU": 0.5,
+        "units": 2,
+        "name": "Space between the keystone panel and MS-A2",
+        "detail": "Lower U7, all of U8 and upper U9 remain empty."
+      },
+      {
+        "fromTop": 11,
+        "startOffsetU": 0,
+        "units": 1.5,
+        "name": "Space between the MS-A2 and MS-01",
+        "detail": "All of U11 and upper U12 remain empty."
+      },
+      {
+        "fromTop": 14,
+        "startOffsetU": 0,
+        "units": 1,
+        "name": "Space above the Jetson shelf",
+        "detail": "U14 remains empty between the MS-01 and bottom shelf."
+      }
+    ]
+  },
+  "hardwareSystem": "M6 heat-set inserts. Six M6 hex nuts only at the three rear shelf connections, as confirmed by Sam."
+}
