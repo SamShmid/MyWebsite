@@ -2,6 +2,7 @@
   "name": "samuel-shmidman-portfolio",
   "compatibility_date": "2026-09-28",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "not_found_handling": "404-page"
   }
 }
