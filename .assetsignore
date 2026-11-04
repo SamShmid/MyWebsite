@@ -4,6 +4,7 @@
 !/*.css
 !/*.js
 !/favicon.svg
+!/sitemap.xml
 
 !/assets/
 /assets/*
