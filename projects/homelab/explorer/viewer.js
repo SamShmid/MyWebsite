@@ -188,26 +188,14 @@ function cameraPreset(name,immediate=false) {
   if (!camera || !gpuReady || staticRequested) { imageView(); return; }
   const joints=name==='joints';
   const occupied=manifest.rackDatum.occupied.find(item=>name===`u${item.fromTop}`||(joints&&item.fromTop===15));
-  const closeup=Boolean(occupied),target=closeup?new THREE.Vector3(0,occupied.centerY,joints?-95:65):sceneBounds.getCenter(new THREE.Vector3());
-  const directions={perspective:[-.9,.35,1.5],front:[0,.015,1],rear:[0,.015,-1],side:[1,.015,0],top:[0,1,.001]};
-  const direction=new THREE.Vector3(...(joints?[.65,.55,-1.5]:closeup?[.65,.65,1.5]:directions[name])).normalize();
+  const closeup=Boolean(occupied),target=new THREE.Vector3(0,closeup?occupied.centerY:manifest.height*.49,joints?-95:closeup?65:0);
+  const directions={perspective:[.9,.35,1.5],front:[0,.015,1],rear:[0,.015,-1],side:[1,.015,0],top:[0,1,.001]};
   const labelSpace=!capturing && mode!=='overview' && stage.clientWidth>=720?400:0;
-  const aspect=Math.max(1,host.clientWidth-labelSpace)/Math.max(1,host.clientHeight);
-  const tanFov=Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
-  let distance=Math.max(220,325/aspect*1.12)/(2*tanFov);
-  if (!closeup) {
-    // Fit the rack AND floor equipment, including depth in top/side views.
-    const right=new THREE.Vector3().crossVectors(camera.up,direction).normalize();
-    const up=new THREE.Vector3().crossVectors(direction,right);
-    distance=0;
-    for (const x of [sceneBounds.min.x,sceneBounds.max.x]) for (const y of [sceneBounds.min.y,sceneBounds.max.y]) for (const z of [sceneBounds.min.z,sceneBounds.max.z]) {
-      const corner=new THREE.Vector3(x,y,z).sub(target),depth=corner.dot(direction);
-      distance=Math.max(distance,depth+Math.abs(corner.dot(right))/(tanFov*aspect),depth+Math.abs(corner.dot(up))/tanFov);
-    }
-    distance*=1.12;
-  }
-  distance*=1+Number($('explode').value)*.0035;
-  const position=target.clone().addScaledVector(direction,distance);
+  const aspect=(host.clientWidth-labelSpace)/host.clientHeight||.9;
+  const fitHeight=closeup?220:manifest.height*(name==='top'?.68:1.23);
+  const fitWidth=(closeup?325:name==='perspective'?450:340)/aspect*1.12;
+  const distance=Math.max(fitHeight,fitWidth)/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)))*(1+Number($('explode').value)*.0035);
+  const position=target.clone().add(new THREE.Vector3(...(joints?[.65,.55,-1.5]:closeup?[.65,.65,1.5]:directions[name])).normalize().multiplyScalar(distance));
   controls.autoRotate=$('rotation').checked;
   if (immediate||reducedMotion.matches||capturing) { camera.position.copy(position);controls.target.copy(target);controls.update(); }
   else transition={from:camera.position.clone(),to:position,targetFrom:controls.target.clone(),targetTo:target,start:performance.now()};
