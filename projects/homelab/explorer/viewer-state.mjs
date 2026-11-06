@@ -38,6 +38,7 @@ export function labelText(part, instance, quantity) {
   if (part.kind === 'hardware') return { title:part.name, lines:[`${quantity} installed · ${part.material}`], href:`bom/#${part.id}`, link:'Parts ↗' };
   let title = part.name, lines;
   switch (part.id) {
+    case 'cyberpower-cp1500pfclcd': lines = [`${s.capacityVA}VA/${s.powerW}W · ${s.waveform}`, s.protectionLabel]; break;
     case 'pi5': title = `${quantity} × Raspberry Pi 5`; lines = ['16 GB RAM each', 'Waveshare PoE HAT on each']; break;
     case 'poe-hat-f': lines = ['PoE HAT (F) · Active cooling']; break;
     case 'tl-sg1005p': lines = ['5 × Gigabit · 4 PoE ports']; break;

@@ -2,6 +2,32 @@
   "units": "mm",
   "parts": [
     {
+      "id": "cyberpower-cp1500pfclcd",
+      "name": "CyberPower CP1500PFCLCD",
+      "kind": "equipment",
+      "anchor": [0, 210, 177.8],
+      "detail": "PFC Sinewave Mini-Tower UPS. 1500VA/1000W, pure sine wave. Upright on the floor to the left of the rack, not rack-mounted.",
+      "sourceUrl": "https://www.cyberpowersystems.com/product/ups/pfc-sinewave/cp1500pfclcd/",
+      "fidelity": "Original low-poly presentation model and front artwork. Official overall dimensions; controls, vents and outlets are illustrative.",
+      "specs": {
+        "capacityVA": 1500,
+        "powerW": 1000,
+        "waveform": "Pure sine wave",
+        "formFactor": "Mini-Tower",
+        "protectionLabel": "Protects: MS-01, MS-A2, ZimaBlade, Home Assistant and the PoE network switch.",
+        "caseDimensionsMm": {"width": 99.06, "height": 279.4, "depth": 355.6},
+        "dimensionBasis": "Official 3.9 W × 11 H × 14 D inches, converted at 25.4 mm/inch. Includes feet.",
+        "manufacturerSource": "https://dl4jz3rbrsfum.cloudfront.net/documents/CyberPower_DS_CP1500PFCLCD.pdf"
+      },
+      "meshes": [
+        {"file": "assets/equipment/cyberpower-cp1500pfclcd-shell.stl", "color": "#191c20", "roughness": 0.85, "metalness": 0.02},
+        {"file": "assets/equipment/cyberpower-cp1500pfclcd-dark.stl", "color": "#05070a", "roughness": 0.8, "metalness": 0.02},
+        {"file": "assets/equipment/cyberpower-cp1500pfclcd-trim.stl", "color": "#343a42", "roughness": 0.65, "metalness": 0.05},
+        {"file": "assets/equipment/cyberpower-cp1500pfclcd-panel.stl", "color": "#ffffff", "roughness": 0.23, "metalness": 0.02, "map": "assets/equipment/cyberpower-cp1500pfclcd-front.png", "mapBoundsXY": [-44, 5, 88, 263]},
+        {"file": "assets/equipment/cyberpower-cp1500pfclcd-front.stl", "color": "#ffffff", "roughness": 0.85, "metalness": 0.02, "map": "assets/equipment/cyberpower-cp1500pfclcd-front.png", "mapBoundsXY": [-44, 5, 88, 263]}
+      ]
+    },
+    {
       "id": "pi5",
       "name": "Raspberry Pi 5 \u00b7 16 GB",
       "kind": "equipment",
@@ -768,6 +794,15 @@
     }
   ],
   "instances": [
+    {
+      "id": "cyberpower-cp1500pfclcd-1",
+      "type": "cyberpower-cp1500pfclcd",
+      "name": "CyberPower CP1500PFCLCD",
+      "section": "Floor · left of rack",
+      "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -230.655, 0, -57.8, 1],
+      "explode": [0, 0, 0],
+      "optional": false
+    },
     {
       "id": "pi5-1",
       "type": "pi5",
