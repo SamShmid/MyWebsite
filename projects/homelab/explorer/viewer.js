@@ -1,4 +1,4 @@
-import { annotationEntries, instancesFor, toggleSelection, labelText } from './viewer-state.mjs?v=live-9';
+import { annotationEntries, instancesFor, toggleSelection, labelText } from './viewer-state.mjs?v=ups-11';
 import { initializeWebGPU } from './gpu-startup.mjs';
 const $ = id => document.getElementById(id);
 const host = $('canvas-host'), stage = $('stage'), area = $('model-area');
@@ -13,7 +13,7 @@ const modes = ['overview','equipment','parts','hardware'];
 const cameraNames = ['perspective','front','rear','side','top','joints','u2','u3','u4','u5','u6','u7','u9','u12','u15'];
 let mode = modes.includes(params.get('mode')) ? params.get('mode') : 'overview';
 let cameraName = cameraNames.includes(params.get('view')) ? params.get('view') : 'perspective';
-let manifest, equipment, hardware, THREE, renderer, scene, camera, controls;
+let manifest, equipment, hardware, THREE, renderer, scene, camera, controls, sceneBounds;
 let parts = new Map(), instances = [], meshes = [], meshByInstance = new Map(), callouts = [];
 let selected = null, gpuReady = false, staticRequested = params.has('static');
 let frame = 0, visible = true, renderNeeded = true, lastTime = 0, transition = null, previousExplosion = 0;
@@ -38,9 +38,9 @@ function imageView() {
   if (embedded && parent !== window) parent.postMessage({type:'homelab:renderer',gpuReady},location.origin);
   if (showImage && Number($('explode').value)) { $('explode').value = '0'; applyExplosion(); }
   const image = $('fallback-image');
-  image.src = `assets/images/screenshots/${mode}/perspective.jpg?v=live-9`;
+  image.src = `assets/images/screenshots/${mode}/perspective.jpg?v=ups-11`;
   image.alt = `${mode === 'hardware' ? 'Translucent fastener' : 'Three-quarter'} screenshot of the homelab rack.`;
-  image.onerror = () => { image.onerror = null; image.src = 'assets/images/screenshots/overview/perspective.jpg?v=live-9'; image.alt = 'Three-quarter screenshot of the homelab rack.'; };
+  image.onerror = () => { image.onerror = null; image.src = 'assets/images/screenshots/overview/perspective.jpg?v=ups-11'; image.alt = 'Three-quarter screenshot of the homelab rack.'; };
   $('image-view').hidden = !showImage; host.hidden = showImage;
   document.querySelector('.viewer-controls').hidden = showImage;
   $('resume-3d').hidden = !(gpuReady && staticRequested);
@@ -188,14 +188,26 @@ function cameraPreset(name,immediate=false) {
   if (!camera || !gpuReady || staticRequested) { imageView(); return; }
   const joints=name==='joints';
   const occupied=manifest.rackDatum.occupied.find(item=>name===`u${item.fromTop}`||(joints&&item.fromTop===15));
-  const closeup=Boolean(occupied),target=new THREE.Vector3(0,closeup?occupied.centerY:manifest.height*.49,joints?-95:closeup?65:0);
-  const directions={perspective:[.9,.35,1.5],front:[0,.015,1],rear:[0,.015,-1],side:[1,.015,0],top:[0,1,.001]};
+  const closeup=Boolean(occupied),target=closeup?new THREE.Vector3(0,occupied.centerY,joints?-95:65):sceneBounds.getCenter(new THREE.Vector3());
+  const directions={perspective:[-.9,.35,1.5],front:[0,.015,1],rear:[0,.015,-1],side:[1,.015,0],top:[0,1,.001]};
+  const direction=new THREE.Vector3(...(joints?[.65,.55,-1.5]:closeup?[.65,.65,1.5]:directions[name])).normalize();
   const labelSpace=!capturing && mode!=='overview' && stage.clientWidth>=720?400:0;
-  const aspect=(host.clientWidth-labelSpace)/host.clientHeight||.9;
-  const fitHeight=closeup?220:manifest.height*(name==='top'?.68:1.23);
-  const fitWidth=(closeup?325:name==='perspective'?450:340)/aspect*1.12;
-  const distance=Math.max(fitHeight,fitWidth)/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)))*(1+Number($('explode').value)*.0035);
-  const position=target.clone().add(new THREE.Vector3(...(joints?[.65,.55,-1.5]:closeup?[.65,.65,1.5]:directions[name])).normalize().multiplyScalar(distance));
+  const aspect=Math.max(1,host.clientWidth-labelSpace)/Math.max(1,host.clientHeight);
+  const tanFov=Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
+  let distance=Math.max(220,325/aspect*1.12)/(2*tanFov);
+  if (!closeup) {
+    // Fit the rack AND floor equipment, including depth in top/side views.
+    const right=new THREE.Vector3().crossVectors(camera.up,direction).normalize();
+    const up=new THREE.Vector3().crossVectors(direction,right);
+    distance=0;
+    for (const x of [sceneBounds.min.x,sceneBounds.max.x]) for (const y of [sceneBounds.min.y,sceneBounds.max.y]) for (const z of [sceneBounds.min.z,sceneBounds.max.z]) {
+      const corner=new THREE.Vector3(x,y,z).sub(target),depth=corner.dot(direction);
+      distance=Math.max(distance,depth+Math.abs(corner.dot(right))/(tanFov*aspect),depth+Math.abs(corner.dot(up))/tanFov);
+    }
+    distance*=1.12;
+  }
+  distance*=1+Number($('explode').value)*.0035;
+  const position=target.clone().addScaledVector(direction,distance);
   controls.autoRotate=$('rotation').checked;
   if (immediate||reducedMotion.matches||capturing) { camera.position.copy(position);controls.target.copy(target);controls.update(); }
   else transition={from:camera.position.clone(),to:position,targetFrom:controls.target.clone(),targetTo:target,start:performance.now()};
@@ -248,17 +260,29 @@ async function startGPU() {
   const files=[...new Set([...parts.values()].flatMap(p=>p.meshes?p.meshes.map(m=>m.file):[p.file]))];
   let loaded=0;
   await Promise.all(files.map(async file=>{const geometry=await loader.loadAsync(file);geometry.computeBoundingBox();geometry.computeBoundingSphere();geometries.set(file,geometry);$('load-status').textContent=`Loading the rack · ${++loaded}/${files.length}`;}));
+  const textures=new Map(),textureLoader=new THREE.TextureLoader();
+  const textureFiles=[...new Set([...parts.values()].flatMap(p=>(p.meshes||[]).filter(m=>m.map).map(m=>m.map)))];
+  await Promise.all(textureFiles.map(async file=>{const texture=await textureLoader.loadAsync(file);texture.colorSpace=THREE.SRGBColorSpace;textures.set(file,texture);}));
   for (const instance of instances) {
     const part=parts.get(instance.type);
     for (const component of part.meshes||[{file:part.file,color:0x252930,roughness:.76,metalness:.09}]) {
       const opacity=component.opacity??1;
-      const material=new THREE.MeshStandardMaterial({color:component.color,roughness:component.roughness,metalness:component.metalness,opacity,transparent:opacity<1,depthWrite:opacity===1});
-      const mesh=new THREE.Mesh(geometries.get(component.file),material);
+      const material=new THREE.MeshStandardMaterial({color:component.color,roughness:component.roughness,metalness:component.metalness,opacity,transparent:opacity<1,depthWrite:opacity===1,map:component.map?textures.get(component.map):null});
+      let geometry=geometries.get(component.file);
+      if (component.map) {
+        // STL has no UVs. A front-facing detail plane uses its declared XY extent.
+        geometry=geometry.clone();
+        const [x,y,width,height]=component.mapBoundsXY,position=geometry.getAttribute('position'),uv=[];
+        for (let i=0;i<position.count;i++) uv.push((position.getX(i)-x)/width,(position.getY(i)-y)/height);
+        geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));
+      }
+      const mesh=new THREE.Mesh(geometry,material);
       mesh.applyMatrix4(new THREE.Matrix4().fromArray(instance.matrix));
       mesh.userData={...instance,baseOpacity:opacity,baseColor:material.color.clone(),basePosition:mesh.position.clone(),explodeVector:new THREE.Vector3(...instance.explode)};
       rack.add(mesh);meshes.push(mesh);if (!meshByInstance.has(instance.id)) meshByInstance.set(instance.id,mesh);
     }
   }
+  sceneBounds=new THREE.Box3().setFromObject(rack);
   const grid=new THREE.GridHelper(1200,24,0x465972,0x33445c);grid.position.y=-1;grid.material.transparent=true;grid.material.opacity=.14;scene.add(grid);
   camera=new THREE.PerspectiveCamera(32,1,1,8000);controls=new OrbitControls(camera,renderer.domElement);
   controls.enableDamping=true;controls.dampingFactor=.09;controls.minDistance=180;controls.maxDistance=3200;controls.autoRotateSpeed=.55;controls.maxPolarAngle=Math.PI*.95;

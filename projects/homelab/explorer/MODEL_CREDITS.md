@@ -31,3 +31,7 @@ STL geometry is unchanged. Meshes converted from 3MF are identified in models-ma
 Sam’s three original designs are shared by Samuel Shmidman. No additional reuse license has been specified. Contact the author for reuse terms.
 
 The website includes the mesh geometry used by the interactive viewer. Designer links and source terms are recorded above. The separate Homelab download bundle is maintained independently.
+
+## CyberPower UPS presentation model
+
+The `assets/equipment/cyberpower-cp1500pfclcd-*` meshes and front artwork were made for this site, not downloaded from a third-party model library. They are a simplified visual model, not CyberPower CAD. The case is 99.06 W × 279.4 H × 355.6 D mm (3.9 × 11 × 14 inches), following page 3 of the [official CP1500PFCLCD datasheet](https://dl4jz3rbrsfum.cloudfront.net/documents/CyberPower_DS_CP1500PFCLCD.pdf). Controls, vents and outlets are illustrative; the front follows Sam's supplied appearance description. CyberPower branding identifies the equipment; it does not imply endorsement. Existing model licences and download bundles are unchanged.
